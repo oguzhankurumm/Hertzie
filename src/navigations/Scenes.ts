@@ -1,5 +1,6 @@
 const Scenes = {
   splash: 'Splash',
+  welcome: 'Welcome',
   login: 'Login',
   register: 'Register',
   home: 'Home',

@@ -7,6 +7,7 @@ type CustomClickableIconPropsTypes = MainTypes & {
   onPress?: () => void;
   iconName: keyof typeof iconsObject;
   disabled?: boolean | undefined;
+  noTint?: boolean | undefined;
   overrideStyle?: StyleProp<ViewStyle> | undefined;
 };
 

@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import PagerView from 'react-native-pager-view';
 
 import { useTranslate } from '_hooks/useTranslate';
 import NavigationServices from '_navigations/NavigationServices';
@@ -9,13 +10,20 @@ const useHome = () => {
   const { translate } = useTranslate();
   const { songs, setCurrentSong } = useSongsStore();
 
+  const pagerRef = useRef<PagerView>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const tabs: string[] = ['For You', 'Songs', 'Playlists', 'Videos'];
+
+  const tabs: string[] = useMemo(() => ['For You', 'Songs', 'Playlists', 'Videos'], []);
   const [selectedTab, setSelectedTab] = useState<string>('For You');
 
-  const onTabPress = useCallback((tab: string) => {
-    setSelectedTab(tab);
-  }, []);
+  const onTabPress = useCallback(
+    (tab: string) => {
+      setSelectedTab(tab);
+      const index = tabs.indexOf(tab);
+      pagerRef.current?.setPage(index);
+    },
+    [tabs]
+  );
 
   const filteredSongs = useMemo(() => {
     if (!songs) return [];
@@ -33,6 +41,7 @@ const useHome = () => {
   );
 
   return {
+    pagerRef,
     filteredSongs,
     onItemPress,
     tabs,

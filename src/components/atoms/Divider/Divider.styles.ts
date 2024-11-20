@@ -7,7 +7,7 @@ const styles = (theme: ThemeType) =>
   StyleSheet.create({
     containerStyle: {
       width: '100%',
-      backgroundColor: theme?.background[800],
+      backgroundColor: theme?.black,
       height: verticalScale(1),
     },
   });

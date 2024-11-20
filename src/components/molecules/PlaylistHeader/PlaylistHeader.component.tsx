@@ -1,8 +1,7 @@
 import { FC, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 
-import iconsObject from '_assets/icons/iconsObject';
-import { CustomImage } from '_atoms';
+import { CustomClickableIcon } from '_atoms';
 import { useTheme } from '_styles/theming';
 
 import CustomText from '../../atoms/CustomText/CustomText.component';
@@ -22,7 +21,7 @@ const PlaylistHeader: FC<PlaylistHeaderPropsTypes> = ({
 }) => {
   const theme = useTheme();
 
-  const { container, textContainer, textStyle, rightContainer, iconContainer, iconStyle } = useMemo(
+  const { container, textContainer, textStyle, rightContainer, iconContainer } = useMemo(
     () => styles(theme),
     [theme]
   );
@@ -39,20 +38,12 @@ const PlaylistHeader: FC<PlaylistHeaderPropsTypes> = ({
         />
       </View>
       <View style={rightContainer}>
-        {showAdd && (
-          <TouchableOpacity activeOpacity={0.8} onPress={onAddPress}>
-            <CustomImage source={iconsObject?.plus} overrideStyle={iconStyle} />
-          </TouchableOpacity>
-        )}
-        {showShuffle && (
-          <TouchableOpacity activeOpacity={0.8} onPress={onShufflePress}>
-            <CustomImage source={iconsObject?.shuffleLinear} overrideStyle={iconStyle} />
-          </TouchableOpacity>
-        )}
+        {showAdd && <CustomClickableIcon iconName='plus' onPress={onAddPress} />}
+        {showShuffle && <CustomClickableIcon iconName='shuffleLinear' onPress={onShufflePress} />}
         {showPlay && (
-          <TouchableOpacity activeOpacity={0.8} style={iconContainer} onPress={onPlayPress}>
-            <CustomImage source={iconsObject?.playFill} overrideStyle={iconStyle} />
-          </TouchableOpacity>
+          <View style={iconContainer}>
+            <CustomClickableIcon iconName='playFill' onPress={onPlayPress} />
+          </View>
         )}
       </View>
     </View>

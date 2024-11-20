@@ -1,7 +1,11 @@
+import { useCallback } from 'react';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { GlobalLoader } from '_molecules';
+import { HeaderMain } from '_organisms';
 import Player from '_scenes/HomeFlow/Player/Player.component';
+import Welcome from '_scenes/Welcome/Welcome.component';
 import { useAuthStore } from '_stores/authStore';
 import { IThemeProviders, themes } from '_styles/theming';
 
@@ -18,13 +22,15 @@ const AppNavigator = () => {
 
   // useExpoNotification();
 
+  const getHeader = useCallback(() => {
+    return <HeaderMain />;
+  }, []);
+
   return (
     <IThemeProviders theme={themes.dark}>
       <GlobalLoader />
       <MainStackNavigator.Navigator
-        initialRouteName={
-          isInitializedAfter ? StackNames.bottomNavBarStack : StackNames.splashStack
-        }
+        initialRouteName={isInitializedAfter ? Scenes.welcome : StackNames.splashStack}
         screenOptions={{
           gestureEnabled: true,
           headerShown: false,
@@ -32,6 +38,7 @@ const AppNavigator = () => {
         }}>
         {isInitializedAfter ? (
           <>
+            <MainStackNavigator.Screen name={Scenes.welcome} component={Welcome} />
             <MainStackNavigator.Screen
               name={StackNames.bottomNavBarStack}
               component={BottomNavBarStack}
@@ -43,6 +50,8 @@ const AppNavigator = () => {
             <MainStackNavigator.Group
               screenOptions={{
                 presentation: 'modal',
+                header: getHeader,
+                headerShown: true,
               }}>
               <MainStackNavigator.Screen name={Scenes.player} component={Player} />
             </MainStackNavigator.Group>

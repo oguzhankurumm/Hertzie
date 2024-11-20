@@ -25,6 +25,7 @@ type ScreenConfig = {
   name: keyof typeof StackNames;
   iconName: keyof typeof iconsObject;
   component: ComponentType<any>;
+  headerShown: boolean;
   testId: string;
   tabBarButton?: BottomTabNavigationOptions['tabBarButton'];
 };
@@ -81,6 +82,7 @@ const BottomNavBarStack = () => {
       name: StackNames.searchStack,
       iconName: 'search',
       component: HomeStack,
+      headerShown: true,
       testId: 'search-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
@@ -96,6 +98,7 @@ const BottomNavBarStack = () => {
       name: StackNames.libraryStack,
       iconName: 'library',
       component: HomeStack,
+      headerShown: true,
       testId: 'library-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
@@ -111,6 +114,7 @@ const BottomNavBarStack = () => {
       name: StackNames.homeStack,
       iconName: 'home',
       component: HomeStack,
+      headerShown: true,
       testId: 'home-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
@@ -126,6 +130,7 @@ const BottomNavBarStack = () => {
       name: StackNames.radioStack,
       iconName: 'radio',
       component: HomeStack,
+      headerShown: true,
       testId: 'radio-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
@@ -140,6 +145,7 @@ const BottomNavBarStack = () => {
     {
       name: StackNames.settingsStack,
       iconName: 'settings',
+      headerShown: false,
       component: SettingsStack,
       testId: 'settings-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
@@ -159,7 +165,7 @@ const BottomNavBarStack = () => {
       <BottomNavBarStackNavigator.Navigator
         initialRouteName={StackNames.homeStack}
         screenOptions={screenOptions}>
-        {screens.map(({ name, iconName, component, tabBarButton, testId }) => (
+        {screens.map(({ name, iconName, component, tabBarButton, headerShown, testId }) => (
           <BottomNavBarStackNavigator.Screen
             key={name}
             {...getAutomationTestingProp(testId)}
@@ -168,10 +174,7 @@ const BottomNavBarStack = () => {
               tabBarIcon: ({ focused }) => renderTabIcon(iconName, focused),
               tabBarButton,
               tabBarShowLabel: false,
-              headerShown:
-                name === StackNames.homeStack ||
-                name === StackNames.searchStack ||
-                name === StackNames.libraryStack,
+              headerShown,
               header: getHeader,
               lazy: false,
             }}

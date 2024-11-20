@@ -37,11 +37,6 @@ const PlayerStyles = (theme: ThemeType) =>
       alignItems: 'center',
       gap: scale(8),
     },
-    songInfoIcon: {
-      width: scale(24),
-      height: scale(24),
-      tintColor: theme?.gray2,
-    },
     controlsContainer: {
       width: '100%',
       flexDirection: 'row',
@@ -74,10 +69,6 @@ const PlayerStyles = (theme: ThemeType) =>
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-    },
-    headerIcon: {
-      width: scale(24),
-      height: scale(24),
     },
   });
 

@@ -24,7 +24,11 @@ const InnerHeader: FC<InnerHeaderProps> = ({
 
   return (
     <View style={[container, overrideContainerStyle]}>
-      {showBackIcon ? <CustomClickableIcon iconName='biArrowLeft' /> : <View style={iconStyle} />}
+      {showBackIcon ? (
+        <CustomClickableIcon iconName='biArrowLeft' />
+      ) : titlePosition === 'center' ? (
+        <View style={iconStyle} />
+      ) : null}
       {title && (
         <CustomText
           text={title.toLocaleUpperCase()}

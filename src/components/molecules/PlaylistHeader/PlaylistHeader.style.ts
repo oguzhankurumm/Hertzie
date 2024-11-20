@@ -36,10 +36,6 @@ const styles = (theme: ThemeType) =>
       alignItems: 'center',
       borderRadius: scale(28),
     },
-    iconStyle: {
-      width: scale(24),
-      height: scale(24),
-    },
   });
 
 export default styles;

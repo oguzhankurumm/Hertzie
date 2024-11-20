@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 
 import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
-import { CustomImage, CustomText } from '_atoms';
+import { CustomClickableIcon, CustomImage, CustomText } from '_atoms';
 import { PlayerProgressbar } from '_molecules';
 import { AppWrapper } from '_organisms';
 import { useSongsStore } from '_stores/songsStore';
@@ -31,12 +31,10 @@ const Player = () => {
     container,
     headerContainer,
     headerTextContainer,
-    headerIcon,
     artworkStyle,
     songInfoContainer,
     songDetailsContainer,
     songInfoContainerRight,
-    songInfoIcon,
     controlsContainer,
     controlPlayPauseButton,
   } = useMemo(() => styles(theme), [theme]);
@@ -45,21 +43,17 @@ const Player = () => {
     <AppWrapper overrideStyle={container}>
       {/* HEADER */}
       <View style={headerContainer}>
-        <TouchableOpacity activeOpacity={0.8} onPress={onDownPress}>
-          <CustomImage source={iconsObject?.downFill} overrideStyle={headerIcon} />
-        </TouchableOpacity>
+        <CustomClickableIcon iconName='downFill' onPress={onDownPress} />
         <View style={headerTextContainer}>
           <CustomText
-            text='PLAYING FROM'
+            text={String('Playing From').toLocaleUpperCase()}
             // text={translate('player.playingFrom')}
             textFontStyle='bold13'
             color={theme?.gray2}
           />
           <CustomText text={playingFrom} textFontStyle='medium12' color={theme?.gray4} />
         </View>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
-          <CustomImage source={iconsObject?.moreHorizontal} overrideStyle={headerIcon} />
-        </TouchableOpacity>
+        <CustomClickableIcon iconName='moreHorizontal' onPress={() => {}} />
       </View>
 
       {/* ARTWORK OR VIDEO */}
@@ -80,15 +74,13 @@ const Player = () => {
               numberOfLines: 1,
             }}
           />
-          <CustomText text={currentSong?.artists} textFontStyle='medium12' color={theme?.gray4} />
+          {currentSong?.artists && (
+            <CustomText text={currentSong?.artists} textFontStyle='medium12' color={theme?.gray4} />
+          )}
         </View>
         <View style={songInfoContainerRight}>
-          <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
-            <CustomImage source={iconsObject?.plus} overrideStyle={songInfoIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
-            <CustomImage source={iconsObject?.moreVertical} overrideStyle={songInfoIcon} />
-          </TouchableOpacity>
+          <CustomClickableIcon iconName='plus' onPress={() => {}} />
+          <CustomClickableIcon iconName='moreVertical' onPress={() => {}} />
         </View>
       </View>
 

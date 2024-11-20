@@ -7,10 +7,12 @@ const styles = (theme: ThemeType, disabled: boolean) =>
   StyleSheet.create({
     containerStyle: {
       flexDirection: 'row',
-      backgroundColor: disabled ? theme?.gray[600] : theme?.gray[900],
+      backgroundColor: disabled ? theme?.gray[600] : 'transparent',
+      borderWidth: scale(2),
+      borderColor: disabled ? theme?.gray[600] : theme?.purple,
       borderRadius: scale(100),
-      paddingHorizontal: scale(16),
-      paddingVertical: verticalScale(12),
+      paddingHorizontal: scale(20),
+      paddingVertical: verticalScale(20),
       justifyContent: 'center',
       alignItems: 'center',
     },

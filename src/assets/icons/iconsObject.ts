@@ -135,6 +135,7 @@ const iconsObject = {
   symbolsCheck: require('./hertzie/material-symbols_check.png'),
   menuFill: require('./hertzie/menu-fill.png'),
   menu: require('./hertzie/menu.png'),
+  menuColored: require('./hertzie/menu-colored.png'),
   musicEqualizer: require('./hertzie/music-equalizer-solid.png'),
   pinFilled: require('./hertzie/pin-filled.png'),
   playFill: require('./hertzie/play-fill.png'),

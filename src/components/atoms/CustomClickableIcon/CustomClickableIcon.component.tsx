@@ -14,8 +14,9 @@ const iconHeight = scale(24);
 
 const CustomClickableIcon: React.FC<CustomClickableIconPropsTypes> = ({
   iconName,
-  testId = '',
+  noTint = false,
   disabled = false,
+  testId = '',
   overrideStyle,
   onPress,
 }) => {
@@ -39,7 +40,7 @@ const CustomClickableIcon: React.FC<CustomClickableIconPropsTypes> = ({
           source={iconsObject?.[iconName]}
           overrideResizeMode='contain'
           overrideStyle={[
-            iconStyle,
+            noTint ? undefined : iconStyle,
             {
               width: iconWidth,
               height: iconHeight,
