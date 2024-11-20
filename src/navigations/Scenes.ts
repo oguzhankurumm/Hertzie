@@ -3,7 +3,7 @@ const Scenes = {
   login: 'Login',
   register: 'Register',
   home: 'Home',
-  eventChat: 'EventChat',
+  player: 'Player',
 };
 
 export default Scenes;

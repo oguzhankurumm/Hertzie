@@ -14,6 +14,7 @@ type MediaListProps = MainTypes & {
   onShufflePress?: () => void;
   onPlayPress?: () => void;
   onAddPress?: () => void;
+  onItemPress: (song: SongItem) => void;
   overrideContainerStyle?: StyleProp<ViewStyle>;
 };
 

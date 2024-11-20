@@ -8,8 +8,7 @@ export const popularDummySongs: SongItem[] = [
     album: 'After Hours',
     genre: 'Pop',
     duration: 200,
-    artwork:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
+    artwork: null,
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
     type: 'video',

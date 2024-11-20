@@ -97,6 +97,11 @@ export const TextStyle = StyleSheet.create({
   },
 
   // NEW
+  bold13: {
+    fontFamily: AppFonts.bold,
+    fontSize: moderateScale(13),
+    lineHeight: undefined,
+  },
   semibold14: {
     fontFamily: AppFonts.semibold,
     fontSize: moderateScale(14),

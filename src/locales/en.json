@@ -27,5 +27,8 @@
     "noInternetConnection": "No internet connection.",
     "restoredInternetConnection": "Your internet connection was restored.",
     "min": "min"
+  },
+  "player": {
+    "playingFrom": "Playing from"
   }
 }

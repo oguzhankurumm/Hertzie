@@ -34,8 +34,9 @@ const SongListCard: FC<SongListCardPropsTypes> = ({
       activeOpacity={0.8}
       style={[container, overrideContainerStyle]}>
       <CustomImage
-        source={artwork ? { uri: artwork } : songPlaceholder}
+        source={{ uri: artwork || undefined }}
         overrideStyle={imageStyle}
+        placeholder={songPlaceholder}
       />
       <View style={textContainer}>
         <CustomText text={slicedTitle} textFontStyle='semibold14' color={theme?.gray2} />

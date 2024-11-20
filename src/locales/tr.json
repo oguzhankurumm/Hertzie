@@ -31,5 +31,8 @@
     "verySoon": "Çok Yakında",
     "min": "dk",
     "paste": "yapıştır"
+  },
+  "player": {
+    "playingFrom": "Şuradan oynatılıyor"
   }
 }

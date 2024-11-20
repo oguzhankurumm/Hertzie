@@ -4,9 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { GlobalLoader } from '_molecules';
 import { HeaderMain } from '_organisms';
+import Player from '_scenes/HomeFlow/Player/Player.component';
 import { useAuthStore } from '_stores/authStore';
 import { IThemeProviders, themes } from '_styles/theming';
 
+import Scenes from './Scenes';
 import StackNames from './StackNames';
 import AuthenticationStack from './Stacks/AuthenticationStack';
 import BottomNavBarStack from './Stacks/BottomNavBarStack';
@@ -46,6 +48,18 @@ const AppNavigator = () => {
               name={StackNames.authenticationStack}
               component={AuthenticationStack}
             />
+            <MainStackNavigator.Group
+              screenOptions={{
+                presentation: 'modal',
+              }}>
+              <MainStackNavigator.Screen
+                name={Scenes.player}
+                component={Player}
+                options={{
+                  headerShown: true,
+                }}
+              />
+            </MainStackNavigator.Group>
           </>
         ) : (
           <MainStackNavigator.Screen

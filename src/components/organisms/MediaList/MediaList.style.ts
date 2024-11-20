@@ -8,7 +8,7 @@ const styles = (_theme: ThemeType) =>
     containerStyle: {
       flex: 1,
     },
-    listContainer: {
+    listContentContainerStyle: {
       marginTop: verticalScale(16),
       paddingBottom: verticalScale(32),
     },

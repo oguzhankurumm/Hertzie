@@ -21,11 +21,12 @@ const MediaList: FC<MediaListProps> = ({
   onShufflePress,
   onPlayPress,
   onAddPress,
+  onItemPress,
   overrideContainerStyle,
 }) => {
   const theme = useTheme();
 
-  const { containerStyle, listContainer } = useMemo(() => styles(theme), [theme]);
+  const { containerStyle, listContentContainerStyle } = useMemo(() => styles(theme), [theme]);
 
   const ItemSeparatorComponent = useCallback(
     () => <View style={{ height: verticalScale(16) }} />,
@@ -37,7 +38,7 @@ const MediaList: FC<MediaListProps> = ({
       {showHeader && (
         <PlaylistHeader
           count={data?.length ?? 0}
-          title={type}
+          title={type === SongType.Audio ? 'Songs' : type === SongType.Radio ? 'Radios' : 'Videos'}
           showPlay={showPlayButton}
           showShuffle={showShuffleButton}
           showAdd={showAddButton}
@@ -54,12 +55,12 @@ const MediaList: FC<MediaListProps> = ({
               title={item?.title}
               artists={item?.artists}
               artwork={item?.artwork}
-              onItemPress={() => {}}
+              onItemPress={() => onItemPress(item)}
               onMorePress={() => {}}
             />
           );
         }}
-        contentContainerStyle={listContainer}
+        contentContainerStyle={listContentContainerStyle}
         keyExtractor={item => item.id}
         ItemSeparatorComponent={ItemSeparatorComponent}
         estimatedItemSize={verticalScale(100)}

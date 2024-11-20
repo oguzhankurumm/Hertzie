@@ -23,9 +23,8 @@
       "requireFullScreen": true,
       "infoPlist": {
         "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
-        "NSCameraUsageDescription": "This app uses the camera",
-        "NSMicrophoneUsageDescription": "This app uses the microphone",
-        "NSPhotoLibraryUsageDescription": "This app uses the photo library"
+        "NSPhotoLibraryUsageDescription": "This app uses the photo library",
+        "UIBackgroundModes": ["audio"]
       },
       "config": {
         "usesNonExemptEncryption": false

@@ -86,6 +86,7 @@ export const themes = {
     gray2: '#CFCECC',
     gray3: '#A8A6A2',
     gray4: '#797979',
+    gray5: '#959595',
   } as ThemeType,
 };
 

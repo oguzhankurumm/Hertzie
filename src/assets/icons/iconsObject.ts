@@ -117,6 +117,7 @@ const iconsObject = {
   userPlus: require('./app-icons/user-plus.png'),
 
   // HERTZIE
+  downFill: require('./hertzie/down-fill.png'),
   home: require('./hertzie/home.png'),
   library: require('./hertzie/library.png'),
   radio: require('./hertzie/radio.png'),
@@ -137,6 +138,7 @@ const iconsObject = {
   musicEqualizer: require('./hertzie/music-equalizer-solid.png'),
   pinFilled: require('./hertzie/pin-filled.png'),
   playFill: require('./hertzie/play-fill.png'),
+  pauseFill: require('./hertzie/player-pause.png'),
   play: require('./hertzie/play.png'),
   playlistAdd: require('./hertzie/playlist-add.png'),
   plus: require('./hertzie/plus.png'),

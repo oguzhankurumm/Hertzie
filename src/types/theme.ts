@@ -144,4 +144,5 @@ export interface ThemeType {
   gray2: string;
   gray3: string;
   gray4: string;
+  gray5: string;
 }
