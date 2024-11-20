@@ -13,7 +13,7 @@ const styles = (_theme: ThemeType) =>
     listStyle: {
       paddingHorizontal: scale(16),
       paddingTop: verticalScale(32),
-      paddingBottom: verticalScale(72),
+      paddingBottom: verticalScale(96),
     },
   });
 

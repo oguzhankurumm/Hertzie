@@ -17,7 +17,7 @@ const styles = (theme: ThemeType) =>
       width: scale(250),
     },
     buttonStyle: {
-      borderRadius: scale(32),
+      borderRadius: scale(16),
       width: '100%',
     },
     buttonTitleStyle: {

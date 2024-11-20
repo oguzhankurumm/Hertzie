@@ -127,9 +127,19 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(16),
     lineHeight: undefined,
   },
+  medium8: {
+    fontFamily: AppFonts.medium,
+    fontSize: moderateScale(8),
+    lineHeight: undefined,
+  },
   medium12: {
     fontFamily: AppFonts.medium,
     fontSize: moderateScale(12),
+    lineHeight: undefined,
+  },
+  extraBold15: {
+    fontFamily: AppFonts.extrabold,
+    fontSize: moderateScale(15),
     lineHeight: undefined,
   },
   extraBold16: {
