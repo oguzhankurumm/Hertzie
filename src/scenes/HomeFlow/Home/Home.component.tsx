@@ -1,13 +1,10 @@
 import { useCallback, useMemo } from 'react';
-import { FlatList, RefreshControl, View } from 'react-native';
-
-import { FlashList } from '@shopify/flash-list';
+import { View } from 'react-native';
 
 import { CustomText } from '_atoms';
-import { SongListCard } from '_molecules';
 // import { useTranslate } from '_hooks/useTranslate';
-import { AppWrapper, HeaderMain } from '_organisms';
-import { verticalScale } from '_styles/scaling';
+import { AppWrapper, MediaList } from '_organisms';
+import { SongType } from '_stores/songsStore';
 import { useTheme } from '_styles/theming';
 
 import styles from './Home.style';
@@ -21,32 +18,9 @@ const Home = () => {
 
   const { container } = useMemo(() => styles(theme), [theme]);
 
-  const ItemSeparatorComponent = useCallback(
-    () => <View style={{ height: verticalScale(16) }} />,
-    []
-  );
-
   return (
     <AppWrapper overrideStyle={container}>
-      <FlashList
-        data={filteredSongs}
-        renderItem={({ item }) => (
-          <SongListCard
-            title={item?.title}
-            artists={item?.artists}
-            artwork={item?.artwork}
-            onItemPress={() => {}}
-            onMorePress={() => {}}
-          />
-        )}
-        keyExtractor={item => item.id}
-        ItemSeparatorComponent={ItemSeparatorComponent}
-        estimatedItemSize={verticalScale(100)}
-        estimatedListSize={{
-          height: verticalScale(100),
-          width: verticalScale(100),
-        }}
-      />
+      <MediaList data={filteredSongs} type={SongType.Audio} mode='list' />
     </AppWrapper>
   );
 };

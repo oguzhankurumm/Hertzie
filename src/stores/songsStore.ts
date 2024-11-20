@@ -2,7 +2,11 @@ import { popularDummySongs } from '_utils/dummy';
 
 import { createMobileStoreWithMiddlewares } from './createMobileStoreWithMiddlewares';
 
-export type SongType = 'audio' | 'video' | 'radio';
+export enum SongType {
+  Audio = 'audio',
+  Video = 'video',
+  Radio = 'radio',
+}
 
 export type SongItem = {
   id: string;

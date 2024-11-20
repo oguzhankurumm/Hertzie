@@ -7,6 +7,7 @@ import GlobalLoader from './GlobalLoader/GlobalLoader.component';
 import InnerHeader from './InnerHeader/InnerHeader.component';
 import LabeledTextInput from './LabeledTextInput/LabeledTextInput.component';
 import ListEmpty from './ListEmpty/ListEmpty.component';
+import PlaylistHeader from './PlaylistHeader/PlaylistHeader.component';
 import SearchBar from './SearchBar/SearchBar.component';
 import SongListCard from './SongListCard/SongListCard.component';
 
@@ -20,6 +21,7 @@ export {
   InnerHeader,
   LabeledTextInput,
   ListEmpty,
+  PlaylistHeader,
   SearchBar,
   SongListCard,
 };
