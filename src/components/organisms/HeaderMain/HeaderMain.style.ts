@@ -1,52 +1,32 @@
-import { Platform, StyleSheet } from 'react-native';
-import { EdgeInsets } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 
 import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 
-const HeaderMainSyles = (theme: ThemeType, safeAreaInsets: EdgeInsets) => {
-  const safeAreaTop = safeAreaInsets?.top || 0;
-
+const HeaderMainSyles = (theme: ThemeType) => {
   return StyleSheet.create({
     mainContainerStyle: {
-      backgroundColor: theme?.gray[100],
+      backgroundColor: theme?.tabBackground,
     },
     containerStyle: {
       width: '100%',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       alignItems: 'center',
-      paddingVertical: scale(8),
-      backgroundColor: theme?.gray[100],
-      gap: scale(8),
-      ...Platform.select({
-        android: {
-          paddingTop: safeAreaTop + verticalScale(10),
-        },
-        ios: {},
-      }),
+      backgroundColor: theme?.tabBackground,
+      marginTop: verticalScale(-12),
     },
-    logoStyle: {
-      height: scale(32),
-      width: scale(135),
-    },
-    rightContainer: {
-      flexDirection: 'row',
-      gap: scale(8),
-    },
-    iconContainer: {
-      width: scale(48),
-      height: scale(48),
-      backgroundColor: theme?.gray[200],
-      gap: scale(8),
-      padding: scale(12),
-      borderRadius: scale(24),
+    logoContainer: {
+      width: scale(70),
+      height: scale(70),
+      backgroundColor: theme?.tabBackground,
+      borderRadius: 100,
+      top: verticalScale(12),
       justifyContent: 'center',
       alignItems: 'center',
     },
-    iconStyle: {
-      width: scale(24),
-      height: scale(24),
+    logoStyle: {
+      height: scale(53),
+      width: scale(53),
     },
   });
 };

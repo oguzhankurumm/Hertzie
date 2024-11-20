@@ -1,11 +1,12 @@
+import { useCallback } from 'react';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { GlobalLoader } from '_molecules';
-import Messages from '_scenes/MessagesFlow/Messages/Messages.component';
+import { HeaderMain } from '_organisms';
 import { useAuthStore } from '_stores/authStore';
-import { IThemeProviders, themes, useTheme } from '_styles/theming';
+import { IThemeProviders, themes } from '_styles/theming';
 
-import Scenes from './Scenes';
 import StackNames from './StackNames';
 import AuthenticationStack from './Stacks/AuthenticationStack';
 import BottomNavBarStack from './Stacks/BottomNavBarStack';
@@ -15,9 +16,13 @@ const MainStackNavigator = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const { isInitializedAfter } = useAuthStore();
-  const theme = useTheme();
 
   // useExpoNotification();
+
+  const getHeader = useCallback(() => {
+    return <HeaderMain />;
+  }, []);
+
   return (
     <IThemeProviders theme={themes.dark}>
       <GlobalLoader />
@@ -27,7 +32,8 @@ const AppNavigator = () => {
         }
         screenOptions={{
           gestureEnabled: true,
-          headerShown: false,
+          headerShown: true,
+          header: getHeader,
           animation: 'slide_from_right',
         }}>
         {isInitializedAfter ? (
@@ -40,23 +46,15 @@ const AppNavigator = () => {
               name={StackNames.authenticationStack}
               component={AuthenticationStack}
             />
-            <MainStackNavigator.Screen
-              name={Scenes.eventChat}
-              component={Messages}
-              options={{
-                headerShown: true,
-                headerBackTitleVisible: false,
-                headerTitle: '',
-                headerTintColor: theme?.gray[900],
-                headerShadowVisible: false,
-                headerStyle: {
-                  backgroundColor: 'white',
-                },
-              }}
-            />
           </>
         ) : (
-          <MainStackNavigator.Screen name={StackNames.splashStack} component={SplashStack} />
+          <MainStackNavigator.Screen
+            name={StackNames.splashStack}
+            component={SplashStack}
+            options={{
+              headerShown: false,
+            }}
+          />
         )}
       </MainStackNavigator.Navigator>
     </IThemeProviders>

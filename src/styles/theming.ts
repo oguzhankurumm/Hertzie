@@ -78,7 +78,14 @@ export const themes = {
 
     // NEW COLORS
     background: '#181818',
+    tabBackground: '#0F0E0E',
+    night: '#050939',
     turquoise: '#6AFCFC',
+    blue: '#1AA3E4',
+    purple: '#A44AC8',
+    gray2: '#CFCECC',
+    gray3: '#A8A6A2',
+    gray4: '#797979',
   } as ThemeType,
 };
 

@@ -9,8 +9,6 @@ const iconsObject = {
   circleRight: require('./common/circle-right-dark.png'),
   redirectTwoTone: require('./common/redirect-two-tone.png'),
   score: require('./common/score-dark.png'),
-  homeDark: require('./common/Home-dark.png'),
-  home2Dark: require('./common/home-2-dark.png'),
   chart1Light: require('./common/chart-1-light.png'),
   buyCryptoLight: require('./common/buy-crypto-light.png'),
   coinWarsLight: require('./common/coin-wars-light.png'),
@@ -104,7 +102,7 @@ const iconsObject = {
   candle: require('./common/candle-dark.png'),
   tickCircle1: require('./common/tick-circle-1-dark.png'),
 
-  // HERTZIE
+  // SAYWALL
   arrowDown: require('./app-icons/arrow-down.png'),
   arrowUp: require('./app-icons/arrow-up.png'),
   bell: require('./app-icons/bell.png'),
@@ -114,17 +112,20 @@ const iconsObject = {
   clockCountdown: require('./app-icons/clock-countdown.png'),
   fire: require('./app-icons/fire.png'),
   handWaving: require('./app-icons/hand-waving.png'),
-  homeFilled: require('./app-icons/home-filled.png'),
-  home: require('./app-icons/home.png'),
   live: require('./app-icons/live.png'),
   messageFilled: require('./app-icons/message-filled.png'),
   message: require('./app-icons/message.png'),
-  searchFilled: require('./app-icons/search-filled.png'),
-  search: require('./app-icons/search.png'),
-  sparkle: require('./app-icons/sparkle.png'),
-  three: require('./app-icons/three.png'),
   user: require('./app-icons/user.png'),
   userPlus: require('./app-icons/user-plus.png'),
+
+  // HERTZIE
+  home: require('./hertzie/home.png'),
+  library: require('./hertzie/library.png'),
+  radio: require('./hertzie/radio.png'),
+  search: require('./hertzie/search.png'),
+  settings: require('./hertzie/settings.png'),
+  music: require('./hertzie/music.png'),
+  moreHorizontal: require('./hertzie/more-horizontal.png'),
 };
 
 const navBarIcons = {};

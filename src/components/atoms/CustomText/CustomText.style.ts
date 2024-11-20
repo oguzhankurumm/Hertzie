@@ -5,7 +5,7 @@ import { ThemeType } from '_types/theme';
 const styles = (theme: ThemeType) =>
   StyleSheet.create({
     textStyle: {
-      color: theme?.gray[500],
+      color: theme?.gray3,
     },
   });
 

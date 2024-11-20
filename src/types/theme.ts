@@ -136,5 +136,12 @@ export interface ThemeType {
   };
   // NEW
   background: string;
+  tabBackground: string;
+  night: string;
   turquoise: string;
+  blue: string;
+  purple: string;
+  gray2: string;
+  gray3: string;
+  gray4: string;
 }

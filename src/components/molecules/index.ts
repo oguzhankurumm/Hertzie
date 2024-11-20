@@ -8,6 +8,7 @@ import InnerHeader from './InnerHeader/InnerHeader.component';
 import LabeledTextInput from './LabeledTextInput/LabeledTextInput.component';
 import ListEmpty from './ListEmpty/ListEmpty.component';
 import SearchBar from './SearchBar/SearchBar.component';
+import SongListCard from './SongListCard/SongListCard.component';
 
 export {
   CustomDateTimePicker,
@@ -20,4 +21,5 @@ export {
   LabeledTextInput,
   ListEmpty,
   SearchBar,
+  SongListCard,
 };

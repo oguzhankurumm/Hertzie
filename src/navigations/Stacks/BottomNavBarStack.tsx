@@ -1,10 +1,11 @@
 import { ComponentType, useCallback, useMemo } from 'react';
-import { Image, Pressable } from 'react-native';
+import { Image, Platform, Pressable } from 'react-native';
 
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
+import * as Device from 'expo-device';
 
 import iconsObject from '_assets/icons/iconsObject';
 import Scenes from '_navigations/Scenes';
@@ -41,62 +42,34 @@ const BottomNavBarStack = () => {
     [theme]
   );
 
+  const isTablet = Device.DeviceType.TABLET;
+
   // Common screen options for all tabs
   const screenOptions = useMemo(
     () => ({
       headerShown: false,
-      headerTintColor: theme?.white,
+      headerTintColor: theme?.gray2,
       headerShadowVisible: false,
       lazy: true,
       tabBarHideOnKeyboard: false,
-      tabBarActiveTintColor: theme?.gray[400],
-      tabBarInactiveTintColor: theme?.gray[600],
+      tabBarActiveTintColor: theme?.purple,
+      tabBarInactiveTintColor: theme?.gray2,
       tabBarItemStyle: {
-        paddingTop: verticalScale(6),
-        paddingBottom: verticalScale(6),
-        height: verticalScale(72),
+        height: isTablet ? verticalScale(70) : verticalScale(60),
       },
       tabBarStyle: {
-        backgroundColor: theme?.white,
+        backgroundColor: theme?.tabBackground,
         borderTopColor: 'transparent',
-        height: verticalScale(72),
-        paddingHorizontal: scale(14),
-        position: 'absolute',
-        bottom: verticalScale(32),
-        right: scale(64),
-        left: scale(64),
-        borderRadius: scale(100),
-        shadowColor: theme?.black,
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
-        elevation: 5,
+        height: Platform.OS === 'android' ? verticalScale(65) : verticalScale(85),
+        paddingHorizontal: scale(24),
       },
     }),
-    [theme?.black, theme?.white, theme?.gray]
+    [theme?.purple, theme?.gray2, theme?.tabBackground, isTablet]
   );
 
   // Array of screen configurations with icon names strictly typed
 
   const screens: ScreenConfig[] = [
-    {
-      name: StackNames.homeStack,
-      iconName: 'homeFilled',
-      component: HomeStack,
-      testId: 'home-bottom-nav',
-      // eslint-disable-next-line react/no-unstable-nested-components
-      tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
-        <Pressable
-          {...rest}
-          onPress={e => {
-            if (onPress) onPress(e);
-          }}
-        />
-      ),
-    },
     {
       name: StackNames.searchStack,
       iconName: 'search',
@@ -113,10 +86,55 @@ const BottomNavBarStack = () => {
       ),
     },
     {
-      name: StackNames.messagesStack,
-      iconName: 'message',
+      name: StackNames.libraryStack,
+      iconName: 'library',
       component: HomeStack,
-      testId: 'messages-bottom-nav',
+      testId: 'library-bottom-nav',
+      // eslint-disable-next-line react/no-unstable-nested-components
+      tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
+        <Pressable
+          {...rest}
+          onPress={e => {
+            if (onPress) onPress(e);
+          }}
+        />
+      ),
+    },
+    {
+      name: StackNames.homeStack,
+      iconName: 'home',
+      component: HomeStack,
+      testId: 'home-bottom-nav',
+      // eslint-disable-next-line react/no-unstable-nested-components
+      tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
+        <Pressable
+          {...rest}
+          onPress={e => {
+            if (onPress) onPress(e);
+          }}
+        />
+      ),
+    },
+    {
+      name: StackNames.radioStack,
+      iconName: 'radio',
+      component: HomeStack,
+      testId: 'radio-bottom-nav',
+      // eslint-disable-next-line react/no-unstable-nested-components
+      tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
+        <Pressable
+          {...rest}
+          onPress={e => {
+            if (onPress) onPress(e);
+          }}
+        />
+      ),
+    },
+    {
+      name: StackNames.settingsStack,
+      iconName: 'settings',
+      component: HomeStack,
+      testId: 'settings-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
         <Pressable

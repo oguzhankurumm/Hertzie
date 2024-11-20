@@ -15,7 +15,7 @@ export const getStyleByStatus = ({ theme, focused }: { theme: ThemeType; focused
   return StyleSheet.create({
     iconStyle: {
       ...BottomNavBarStackNavigatorStyles(theme).iconDefaultStyle,
-      tintColor: focused ? theme?.gray[900] : theme?.gray[400],
+      tintColor: focused ? theme?.purple : theme?.gray2,
     },
   });
 };

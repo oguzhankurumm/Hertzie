@@ -8,6 +8,7 @@ const imagesObject = {
   fullLogo: require('./full-logo.png'),
   iconLogo: require('./icon-logo.png'),
   welcomeBackground: require('./welcome-background.png'),
+  songPlaceholder: require('./song-placeholder.png'),
 };
 
 export default imagesObject;

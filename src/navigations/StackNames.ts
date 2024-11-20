@@ -4,7 +4,9 @@ const StackNames = {
   bottomNavBarStack: 'bottomNavBarStack',
   homeStack: 'homeStack',
   searchStack: 'searchStack',
-  messagesStack: 'messagesStack',
+  libraryStack: 'libraryStack',
+  radioStack: 'radioStack',
+  settingsStack: 'settingsStack',
 } as const;
 
 export default StackNames;

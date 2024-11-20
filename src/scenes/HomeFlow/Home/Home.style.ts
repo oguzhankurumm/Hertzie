@@ -7,8 +7,6 @@ const styles = (theme: ThemeType) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      paddingTop: 0,
-      paddingHorizontal: scale(16),
     },
   });
 

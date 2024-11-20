@@ -14,8 +14,8 @@ const styles = (theme: ThemeType) =>
     },
     body: {
       flex: 1,
-      paddingHorizontal: scale(16),
-      paddingTop: verticalScale(16),
+      paddingHorizontal: scale(12),
+      paddingTop: verticalScale(24),
     },
   });
 

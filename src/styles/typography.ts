@@ -95,6 +95,23 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(10),
     lineHeight: undefined,
   },
+
+  // NEW
+  semibold14: {
+    fontFamily: AppFonts.semibold,
+    fontSize: moderateScale(14),
+    lineHeight: undefined,
+  },
+  semibold13: {
+    fontFamily: AppFonts.semibold,
+    fontSize: moderateScale(13),
+    lineHeight: undefined,
+  },
+  medium12: {
+    fontFamily: AppFonts.medium,
+    fontSize: moderateScale(12),
+    lineHeight: undefined,
+  },
 });
 
 export type TextStyleTypes = keyof typeof TextStyle;
