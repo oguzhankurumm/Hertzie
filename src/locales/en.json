@@ -1,0 +1,31 @@
+{
+  "common": {
+    "success": "Success",
+    "error": "Error",
+    "done": "Done",
+    "select": "Select",
+    "unselect": "Unselect",
+    "change": "Change",
+    "applicationLanguage": "Preferred Language",
+    "lightTheme": "Light theme",
+    "darkTheme": "Dark theme",
+    "tryAgain": "Try Again",
+    "language": "Language",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "close": "Close",
+    "remove": "Remove",
+    "title": "Title",
+    "openSettings": "Open Settings",
+    "ok": "Ok",
+    "continue": "Continue",
+    "accept": "Accept",
+    "decline": "Decline",
+    "dismiss": "Dismiss",
+    "searchInputPlaceholder": "Search...",
+    "noInternetConnection": "No internet connection.",
+    "restoredInternetConnection": "Your internet connection was restored.",
+    "min": "min"
+  }
+}

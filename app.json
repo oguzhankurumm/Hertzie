@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "Hertzie",
+    "owner": "hertzie",
+    "scheme": "hertzie",
+    "slug": "hertzie",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/app/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./src/assets/app/splash.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#050939"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "packagerOpts": {
+      "assetExts": ["png", "jpg", "jpeg", "svg"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hertzie.app",
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
+        "NSCameraUsageDescription": "This app uses the camera",
+        "NSMicrophoneUsageDescription": "This app uses the microphone",
+        "NSPhotoLibraryUsageDescription": "This app uses the photo library"
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "resize",
+      "package": "com.hertzie.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/app/icon.png",
+        "backgroundColor": "#181818"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "hertzie",
+              "pathPrefix": "/"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "experiments": {
+      "tsconfigPaths": false
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "privacy": "public",
+    "primaryColor": "#181818",
+    "locales": {
+      "en": "./src/locales/en.json",
+      "tr": "./src/locales/tr.json"
+    }
+  }
+}

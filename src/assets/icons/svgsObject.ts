@@ -1,0 +1,17 @@
+export { default as IconArrowRight } from './svg/ArrowRight';
+export { default as IconBoxModel2 } from './svg/BoxModel2';
+export { default as IconCaretDown } from './svg/CaretDown';
+export { default as IconCaretUp } from './svg/CaretUp';
+export { default as IconCalendar } from './svg/Calendar';
+export { default as IconCheck } from './svg/Check';
+export { default as IconChevronDown } from './svg/ChevronDown';
+export { default as IconChevronLeft } from './svg/ChevronLeft';
+export { default as IconChevronRight } from './svg/ChevronRight';
+export { default as IconChevronUp } from './svg/ChevronUp';
+export { default as IconCircleCheck } from './svg/CircleCheck';
+export { default as IconCircleTriangle } from './svg/CircleTriangle';
+export { default as IconClock } from './svg/Clock';
+export { default as IconError404 } from './svg/Error404';
+export { default as IconInfoCircle } from './svg/InfoCircle';
+export { default as IconTrash } from './svg/Trash';
+export { default as IconX } from './svg/X';
