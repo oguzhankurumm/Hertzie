@@ -77,7 +77,7 @@ export const themes = {
     },
 
     // NEW COLORS
-    background: '#181818',
+    background: '#0F0E0E',
     tabBackground: '#0F0E0E',
     night: '#050939',
     turquoise: '#6AFCFC',

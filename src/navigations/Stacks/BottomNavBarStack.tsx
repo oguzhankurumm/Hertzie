@@ -8,14 +8,16 @@ import {
 import * as Device from 'expo-device';
 
 import iconsObject from '_assets/icons/iconsObject';
-import Scenes from '_navigations/Scenes';
+import { FloatingPlayer } from '_molecules';
 import StackNames from '_navigations/StackNames';
+import { HeaderMain } from '_organisms';
 import { scale, verticalScale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
 import { getAutomationTestingProp } from '_utils/helpers';
 
-import { getStyleByStatus } from './BottomNavBarStackNavigator.style';
+import styles, { getStyleByStatus } from './BottomNavBarStackNavigator.style';
 import HomeStack from './HomeStack';
+import SettingsStack from './SettingsStack';
 
 const BottomNavBarStackNavigator = createBottomTabNavigator();
 
@@ -29,6 +31,12 @@ type ScreenConfig = {
 
 const BottomNavBarStack = () => {
   const theme = useTheme();
+
+  const { floatingPlayerStyle } = useMemo(() => styles(theme), [theme]);
+
+  const getHeader = useCallback(() => {
+    return <HeaderMain />;
+  }, []);
 
   // Function to render the icon for each tab
   const renderTabIcon = useCallback(
@@ -47,7 +55,6 @@ const BottomNavBarStack = () => {
   // Common screen options for all tabs
   const screenOptions = useMemo(
     () => ({
-      headerShown: false,
       headerTintColor: theme?.gray2,
       headerShadowVisible: false,
       lazy: true,
@@ -133,7 +140,7 @@ const BottomNavBarStack = () => {
     {
       name: StackNames.settingsStack,
       iconName: 'settings',
-      component: HomeStack,
+      component: SettingsStack,
       testId: 'settings-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarButton: ({ to, onPress, onLongPress, ...rest }) => (
@@ -148,24 +155,32 @@ const BottomNavBarStack = () => {
   ];
 
   return (
-    <BottomNavBarStackNavigator.Navigator
-      initialRouteName={Scenes.home}
-      screenOptions={screenOptions}>
-      {screens.map(({ name, iconName, component, tabBarButton, testId }) => (
-        <BottomNavBarStackNavigator.Screen
-          key={name}
-          {...getAutomationTestingProp(testId)}
-          name={name}
-          options={{
-            tabBarIcon: ({ focused }) => renderTabIcon(iconName, focused),
-            tabBarButton,
-            tabBarShowLabel: false,
-            headerShown: false,
-          }}
-          component={component}
-        />
-      ))}
-    </BottomNavBarStackNavigator.Navigator>
+    <>
+      <BottomNavBarStackNavigator.Navigator
+        initialRouteName={StackNames.homeStack}
+        screenOptions={screenOptions}>
+        {screens.map(({ name, iconName, component, tabBarButton, testId }) => (
+          <BottomNavBarStackNavigator.Screen
+            key={name}
+            {...getAutomationTestingProp(testId)}
+            name={name}
+            options={{
+              tabBarIcon: ({ focused }) => renderTabIcon(iconName, focused),
+              tabBarButton,
+              tabBarShowLabel: false,
+              headerShown:
+                name === StackNames.homeStack ||
+                name === StackNames.searchStack ||
+                name === StackNames.libraryStack,
+              header: getHeader,
+              lazy: false,
+            }}
+            component={component}
+          />
+        ))}
+      </BottomNavBarStackNavigator.Navigator>
+      <FloatingPlayer overrideContainerStyle={floatingPlayerStyle} />
+    </>
   );
 };
 

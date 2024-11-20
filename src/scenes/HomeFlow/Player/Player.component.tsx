@@ -1,17 +1,12 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Slider } from 'react-native-awesome-slider';
-import { useSharedValue } from 'react-native-reanimated';
-
-// import TrackPlayer, { useProgress } from 'react-native-track-player';
-import dayjs from 'dayjs';
 
 import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomImage, CustomText } from '_atoms';
-import { useTranslate } from '_hooks/useTranslate';
+import { PlayerProgressbar } from '_molecules';
 import { AppWrapper } from '_organisms';
-import { SongType, useSongsStore } from '_stores/songsStore';
+import { useSongsStore } from '_stores/songsStore';
 import { useTheme } from '_styles/theming';
 
 import styles, { getStyleByStatus } from './Player.style';
@@ -19,7 +14,6 @@ import { usePlayer } from './hooks/usePlayer.hook';
 
 const Player = () => {
   const theme = useTheme();
-  const { translate } = useTranslate();
 
   const {
     currentSong,
@@ -43,22 +37,9 @@ const Player = () => {
     songDetailsContainer,
     songInfoContainerRight,
     songInfoIcon,
-    sliderContainer,
-    sliderTrack,
-    sliderDurationsTextContainer,
     controlsContainer,
     controlPlayPauseButton,
   } = useMemo(() => styles(theme), [theme]);
-
-  // const { duration, position } = useProgress(250);
-
-  // const isSliding = useSharedValue(false);
-  // const progress = useSharedValue(0);
-  // const min = useSharedValue(0);
-  // const max = useSharedValue(1);
-
-  // const trackElapsedTime = position;
-  const trackElapsedTime = 0;
 
   return (
     <AppWrapper overrideStyle={container}>
@@ -112,16 +93,7 @@ const Player = () => {
       </View>
 
       {/* SLIDER */}
-      <View style={sliderContainer}>
-        <View style={sliderTrack} />
-        <View style={sliderDurationsTextContainer}>
-          <CustomText text={dayjs(trackElapsedTime).format('mm:ss')} textFontStyle='medium12' />
-          <CustomText
-            text={dayjs(currentSong?.duration).format('mm:ss')}
-            textFontStyle='medium12'
-          />
-        </View>
-      </View>
+      <PlayerProgressbar />
 
       {/* CONTROLS */}
       <View style={controlsContainer}>

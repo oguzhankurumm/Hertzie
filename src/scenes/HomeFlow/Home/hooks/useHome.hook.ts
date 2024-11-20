@@ -10,6 +10,12 @@ const useHome = () => {
   const { songs, setCurrentSong } = useSongsStore();
 
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const tabs: string[] = ['For You', 'Songs', 'Playlists', 'Videos'];
+  const [selectedTab, setSelectedTab] = useState<string>('For You');
+
+  const onTabPress = useCallback((tab: string) => {
+    setSelectedTab(tab);
+  }, []);
 
   const filteredSongs = useMemo(() => {
     if (!songs) return [];
@@ -29,6 +35,9 @@ const useHome = () => {
   return {
     filteredSongs,
     onItemPress,
+    tabs,
+    selectedTab,
+    onTabPress,
   };
 };
 

@@ -1,15 +1,18 @@
 import { StyleSheet } from 'react-native';
 
-import { verticalScale } from '_styles/scaling';
+import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 
 const styles = (_theme: ThemeType) =>
   StyleSheet.create({
-    containerStyle: {
+    container: {
       flex: 1,
+      paddingTop: 0,
+      paddingHorizontal: 0,
     },
-    listContentContainerStyle: {
-      marginTop: verticalScale(16),
+    listStyle: {
+      paddingHorizontal: scale(16),
+      paddingTop: verticalScale(32),
       paddingBottom: verticalScale(72),
     },
   });

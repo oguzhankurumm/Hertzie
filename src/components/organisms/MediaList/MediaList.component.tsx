@@ -49,6 +49,15 @@ const MediaList: FC<MediaListProps> = ({
       )}
       <FlashList
         data={data}
+        contentContainerStyle={listContentContainerStyle}
+        keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={ItemSeparatorComponent}
+        estimatedItemSize={verticalScale(100)}
+        estimatedListSize={{
+          height: verticalScale(100),
+          width: verticalScale(100),
+        }}
         renderItem={({ item }) => {
           return (
             <SongListCard
@@ -59,14 +68,6 @@ const MediaList: FC<MediaListProps> = ({
               onMorePress={() => {}}
             />
           );
-        }}
-        contentContainerStyle={listContentContainerStyle}
-        keyExtractor={item => item.id}
-        ItemSeparatorComponent={ItemSeparatorComponent}
-        estimatedItemSize={verticalScale(100)}
-        estimatedListSize={{
-          height: verticalScale(100),
-          width: verticalScale(100),
         }}
       />
     </View>

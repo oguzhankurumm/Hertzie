@@ -1,11 +1,8 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback } from 'react';
 
 import NavigationServices from '_navigations/NavigationServices';
-import { useSongsStore } from '_stores/songsStore';
 
 const usePlayer = () => {
-  const { currentSong } = useSongsStore();
-
   const onDownPress = useCallback(() => {
     NavigationServices.goBack();
   }, []);

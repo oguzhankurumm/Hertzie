@@ -1,18 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 import globalStyles from '_styles/globalStyles';
-import { scale, verticalScale } from '_styles/scaling';
+import { scale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 
 const styles = (theme: ThemeType) =>
   StyleSheet.create({
     container: {
-      ...globalStyles(theme)?.rowLeft,
-      gap: scale(8),
-      paddingBottom: verticalScale(8),
-      marginBottom: verticalScale(8),
-      borderBottomWidth: scale(1),
-      borderBottomColor: theme?.gray[800],
+      ...globalStyles(theme)?.rowSpaceBetween,
+      padding: scale(16),
+      gap: scale(18),
+      backgroundColor: theme?.tabBackground,
+    },
+    rightContainer: {
+      ...globalStyles(theme)?.rowFlexEnd,
+      gap: scale(12),
     },
     iconStyle: {
       width: scale(24),

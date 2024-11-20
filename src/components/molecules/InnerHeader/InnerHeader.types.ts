@@ -1,13 +1,16 @@
 import { StyleProp, ViewStyle } from 'react-native';
 
-import iconsObject from '_assets/icons/iconsObject';
 import { TextStyleTypes } from '_styles/typography';
 import MainTypes from '_types/index';
 
 type InnerHeaderProps = MainTypes & {
   title: string;
-  subtitle?: string;
-  iconName?: keyof typeof iconsObject;
+  titlePosition?: 'center' | 'left';
+  showBackIcon?: boolean;
+  showSearchIcon?: boolean;
+  onSearchIconPress?: () => void;
+  showAddIcon?: boolean;
+  onAddIconPress?: () => void;
   overrideTitleFontStyle?: TextStyleTypes;
   overrideSubtitleFontStyle?: TextStyleTypes;
   overrideContainerStyle?: StyleProp<ViewStyle>;

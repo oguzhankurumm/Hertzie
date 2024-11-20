@@ -42,20 +42,6 @@ const PlayerStyles = (theme: ThemeType) =>
       height: scale(24),
       tintColor: theme?.gray2,
     },
-    sliderContainer: {
-      width: '100%',
-      gap: verticalScale(8),
-    },
-    sliderTrack: {
-      width: '100%',
-      height: scale(4),
-      backgroundColor: theme?.gray5,
-    },
-    sliderDurationsTextContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
     controlsContainer: {
       width: '100%',
       flexDirection: 'row',

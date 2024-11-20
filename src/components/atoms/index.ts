@@ -3,6 +3,7 @@ import CustomActivityIndicator from './CustomActivityIndicator/CustomActivityInd
 import CustomBottomSheet from './CustomBottomSheet/CustomBottomSheet.component';
 import CustomButton from './CustomButton/CustomButton.component';
 import CustomCheckBox from './CustomCheckBox/CustomCheckBox.component';
+import CustomClickableIcon from './CustomClickableIcon/CustomClickableIcon.component';
 import CustomImage from './CustomImage/CustomImage.component';
 import CustomSwitch from './CustomSwitch/CustomSwitch.component';
 import CustomText from './CustomText/CustomText.component';
@@ -19,6 +20,7 @@ export {
   CustomBottomSheet,
   CustomButton,
   CustomCheckBox,
+  CustomClickableIcon,
   CustomImage,
   CustomSwitch,
   CustomText,

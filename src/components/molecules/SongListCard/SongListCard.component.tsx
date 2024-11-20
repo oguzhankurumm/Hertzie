@@ -26,7 +26,7 @@ const SongListCard: FC<SongListCardPropsTypes> = ({
     [theme]
   );
 
-  const slicedTitle = title.length > 32 ? `${title.slice(0, 20)}...` : title;
+  const slicedTitle = title.length > 28 ? `${title.slice(0, 28)}...` : title;
 
   return (
     <TouchableOpacity

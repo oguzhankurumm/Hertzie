@@ -149,6 +149,8 @@ const iconsObject = {
   skipForward: require('./hertzie/skip-forward.png'),
   shuffleLinear: require('./hertzie/solar_shuffle-linear.png'),
   video: require('./hertzie/video.png'),
+  infoOutline: require('./hertzie/info-outline.png'),
+  share: require('./hertzie/share.png'),
 };
 
 const navBarIcons = {};
