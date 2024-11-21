@@ -1,14 +1,19 @@
 import { StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import globalStyles from '_styles/globalStyles';
-import { scale } from '_styles/scaling';
+import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 
-const styles = (theme: ThemeType) =>
-  StyleSheet.create({
+const InnerHeaderStyles = (theme: ThemeType) => {
+  const safeAreaInsets = useSafeAreaInsets();
+  const safeAreaTop = safeAreaInsets?.top || 0;
+
+  return StyleSheet.create({
     container: {
       ...globalStyles(theme)?.rowSpaceBetween,
       padding: scale(16),
+      paddingTop: safeAreaTop + verticalScale(24),
       gap: scale(18),
       backgroundColor: theme?.tabBackground,
     },
@@ -21,5 +26,6 @@ const styles = (theme: ThemeType) =>
       height: scale(24),
     },
   });
+};
 
-export default styles;
+export default InnerHeaderStyles;

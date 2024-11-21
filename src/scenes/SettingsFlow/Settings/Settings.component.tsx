@@ -22,7 +22,7 @@ const Settings = () => {
   );
 
   return (
-    <AppWrapper overrideStyle={container}>
+    <AppWrapper overrideStyle={container} removeSafeAreaView>
       <InnerHeader title='Settings' />
       <FlatList
         data={settingsItems}
