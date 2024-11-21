@@ -13,7 +13,11 @@ import CustomText from '../../atoms/CustomText/CustomText.component';
 import styles from './PlayerProgressbar.style';
 import { PlayerProgressbarPropsTypes } from './PlayerProgressbar.types';
 
-const PlayerProgressbar: FC<PlayerProgressbarPropsTypes> = ({ overrideContainerStyle }) => {
+const PlayerProgressbar: FC<PlayerProgressbarPropsTypes> = ({
+  hideTimes = false,
+  overrideThumbWidth,
+  overrideContainerStyle,
+}) => {
   const theme = useTheme();
 
   const { sliderContainer, sliderDurationsTextContainer, sliderTrack } = useMemo(
@@ -28,6 +32,7 @@ const PlayerProgressbar: FC<PlayerProgressbarPropsTypes> = ({ overrideContainerS
   const min = useSharedValue(0);
   const max = useSharedValue(1);
   const thumbScaleValue = useSharedValue(1);
+  const thumbWith = overrideThumbWidth ?? scale(12);
 
   const trackElapsedTime = dayjs(position).format('mm:ss');
   const trackTotalTime = dayjs(duration).format('mm:ss');
@@ -43,7 +48,7 @@ const PlayerProgressbar: FC<PlayerProgressbarPropsTypes> = ({ overrideContainerS
         minimumValue={min}
         maximumValue={max}
         containerStyle={sliderTrack}
-        thumbWidth={scale(12)}
+        thumbWidth={thumbWith}
         renderBubble={() => null}
         theme={{
           minimumTrackTintColor: theme?.purple,
@@ -65,10 +70,12 @@ const PlayerProgressbar: FC<PlayerProgressbarPropsTypes> = ({ overrideContainerS
           await TrackPlayer.seekTo(value * duration);
         }}
       />
-      <View style={sliderDurationsTextContainer}>
-        <CustomText text={trackElapsedTime} textFontStyle='medium12' />
-        <CustomText text={trackTotalTime} textFontStyle='medium12' />
-      </View>
+      {!hideTimes && (
+        <View style={sliderDurationsTextContainer}>
+          <CustomText text={trackElapsedTime} textFontStyle='medium12' />
+          <CustomText text={trackTotalTime} textFontStyle='medium12' />
+        </View>
+      )}
     </View>
   );
 };

@@ -45,9 +45,12 @@ const FloatingPlayer: FC<FloatingPlayerPropsTypes> = ({ overrideContainerStyle }
       : currentSong?.artists.join(', ');
 
   return (
-    <TouchableOpacity onPress={() => NavigationServices.navigate(Scenes.player)} activeOpacity={1}>
-      <PlayerProgressbar />
-      <View style={[container, overrideContainerStyle]}>
+    <TouchableOpacity
+      style={overrideContainerStyle}
+      onPress={() => NavigationServices.navigate(Scenes.player)}
+      activeOpacity={1}>
+      <PlayerProgressbar hideTimes overrideThumbWidth={0} />
+      <View style={[container]}>
         <View style={trackTitleContainer}>
           <CustomText
             text={slicedTitle}
