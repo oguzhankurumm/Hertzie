@@ -7,7 +7,7 @@ const styles = (theme: ThemeType) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      paddingHorizontal: scale(16),
+      paddingHorizontal: scale(32),
       paddingVertical: verticalScale(56),
       justifyContent: 'space-between',
       alignItems: 'center',

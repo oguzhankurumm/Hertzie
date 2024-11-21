@@ -12,7 +12,7 @@ const styles = (theme: ThemeType, disabled: boolean) =>
       borderColor: disabled ? theme?.gray[600] : theme?.purple,
       borderRadius: scale(100),
       paddingHorizontal: scale(20),
-      paddingVertical: verticalScale(20),
+      paddingVertical: verticalScale(16),
       justifyContent: 'center',
       alignItems: 'center',
     },
