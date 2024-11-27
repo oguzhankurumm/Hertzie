@@ -5,7 +5,22 @@ const Scenes = {
   register: 'Register',
   home: 'Home',
   player: 'Player',
+  library: 'Library',
+  radio: 'Radio',
   settings: 'Settings',
+  account: 'Account',
+  playbackAndHertz: 'PlaybackAndHertz',
+  selectLanguage: 'SelectLanguage',
+  scanMusic: 'ScanMusic',
+  feedback: 'Feedback',
+  equalizer: 'Equalizer',
+  createPlaylist: 'CreatePlaylist',
+  createPlaylistName: 'CreatePlaylistName',
+  playlistInside: 'PlaylistInside',
+  playlistBrowse: 'PlaylistBrowse',
+  playlistSelect: 'PlaylistSelect',
+  playlistSelectMusic: 'PlaylistSelectMusic',
+  browseArtists: 'BrowseArtists',
 };
 
 export default Scenes;

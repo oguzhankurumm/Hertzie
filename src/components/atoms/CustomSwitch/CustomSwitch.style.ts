@@ -11,7 +11,7 @@ const styles = ({ active = false }: { active: boolean }) =>
       justifyContent: 'space-between',
       alignSelf: 'flex-start',
       minWidth: scale(34),
-      height: verticalScale(24),
+      height: verticalScale(16),
       borderRadius: scale(12),
     },
     circleDefaultStyle: {
@@ -39,11 +39,11 @@ export const getStyleByStatus = ({
     return StyleSheet.create({
       containerStyle: {
         ...styles({ active }).containerDefaultStyle,
-        backgroundColor: active ? theme?.background[100] : theme?.background[300],
+        backgroundColor: active ? theme?.purple : theme?.gray7,
       },
       circleStyle: {
         ...styles({ active }).circleDefaultStyle,
-        backgroundColor: active ? theme?.background[900] : theme?.background[100],
+        backgroundColor: active ? theme?.divider : theme?.white,
       },
       textStyle: {
         ...styles({ active }).textDefaultStyle,
@@ -54,11 +54,11 @@ export const getStyleByStatus = ({
   return StyleSheet.create({
     containerStyle: {
       ...styles({ active }).containerDefaultStyle,
-      backgroundColor: active ? theme?.background[100] : theme?.background[300],
+      backgroundColor: active ? theme?.white : theme?.gray7,
     },
     circleStyle: {
       ...styles({ active }).circleDefaultStyle,
-      backgroundColor: theme?.background[300],
+      backgroundColor: theme?.gray7,
     },
     textStyle: {
       ...styles({ active }).textDefaultStyle,

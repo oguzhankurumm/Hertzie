@@ -87,8 +87,8 @@ const CustomTextInput: FC<CustomTextInputPropsTypes> = ({
         underlineColorAndroid='transparent'
         activeUnderlineColor='transparent'
         {...restTextInputProps}
-        cursorColor={theme?.primary[600]}
-        selectionColor={theme?.primary[600]}
+        cursorColor={theme?.white}
+        selectionColor={theme?.white}
       />
       {secureTextEntry && (
         <TouchableOpacity onPress={() => setIsSecure(!isSecure)} style={iconContainer}>

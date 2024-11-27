@@ -17,6 +17,8 @@ import { getAutomationTestingProp } from '_utils/helpers';
 
 import styles, { getStyleByStatus } from './BottomNavBarStackNavigator.style';
 import HomeStack from './HomeStack';
+import LibraryStack from './LibraryStack';
+import RadioStack from './RadioStack';
 import SettingsStack from './SettingsStack';
 
 const BottomNavBarStackNavigator = createBottomTabNavigator();
@@ -97,7 +99,7 @@ const BottomNavBarStack = () => {
     {
       name: StackNames.libraryStack,
       iconName: 'library',
-      component: HomeStack,
+      component: LibraryStack,
       headerShown: true,
       testId: 'library-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components
@@ -129,7 +131,7 @@ const BottomNavBarStack = () => {
     {
       name: StackNames.radioStack,
       iconName: 'radio',
-      component: HomeStack,
+      component: RadioStack,
       headerShown: true,
       testId: 'radio-bottom-nav',
       // eslint-disable-next-line react/no-unstable-nested-components

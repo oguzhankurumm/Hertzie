@@ -1,15 +1,17 @@
 import { useCallback, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { FlatList, TouchableOpacity, View } from 'react-native';
 import PagerView from 'react-native-pager-view';
+
+import { FlashList } from '@shopify/flash-list';
 
 import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomImage, CustomText, Divider } from '_atoms';
-import { SelectableTabs } from '_molecules';
+import { PlaylistCard, SelectableTabs, VideoCard } from '_molecules';
 import { AppWrapper, MediaList } from '_organisms';
 import { SongItem, SongType, useSongsStore } from '_stores/songsStore';
 import globalStyles from '_styles/globalStyles';
-import { scale } from '_styles/scaling';
+import { scale, verticalScale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
 
 import styles from './Home.style';
@@ -19,7 +21,18 @@ const Home = () => {
   const theme = useTheme();
   const { songs } = useSongsStore();
 
-  const { pagerRef, tabs, selectedTab, onTabPress, filteredSongs, onItemPress } = useHome();
+  const {
+    pagerRef,
+    tabs,
+    selectedTab,
+    onTabPress,
+    filteredSongs,
+    onItemPress,
+    videoItems,
+    videoShownType,
+    setVideoShownType,
+    playlistItems,
+  } = useHome();
 
   const {
     container,
@@ -35,6 +48,7 @@ const Home = () => {
     songCardItemImageStyle,
     songCardItemPlayContainer,
     songCardItemPlayIcon,
+    videoListWrapperStyle,
   } = useMemo(() => styles(theme), [theme]);
 
   const PlayListCardItem = useCallback(
@@ -149,10 +163,43 @@ const Home = () => {
           />
         </View>
         <View key='2'>
-          <CustomText text='Playlists' />
+          <FlatList
+            data={playlistItems}
+            renderItem={({ item, index }) => (
+              <PlaylistCard
+                key={item.id}
+                showPinIcon={index === 0}
+                type='list'
+                {...item}
+                overrideContainerStyle={{ marginBottom: verticalScale(16) }}
+              />
+            )}
+            keyExtractor={item => item.id}
+            horizontal={false}
+            onEndReachedThreshold={0.5}
+            onEndReached={() => {}}
+            ListFooterComponent={<View style={{ height: verticalScale(16) }} />}
+          />
         </View>
         <View key='3'>
-          <CustomText text='Videos' />
+          <FlatList
+            data={videoItems}
+            renderItem={({ item }) => (
+              <VideoCard
+                key={item.id}
+                type={videoShownType}
+                {...item}
+                overrideContainerStyle={{ marginBottom: verticalScale(16) }}
+              />
+            )}
+            columnWrapperStyle={videoListWrapperStyle}
+            keyExtractor={item => item.id}
+            numColumns={videoShownType === 'grid' ? 2 : 1}
+            horizontal={false}
+            onEndReachedThreshold={0.5}
+            onEndReached={() => {}}
+            ListFooterComponent={<View style={{ height: verticalScale(16) }} />}
+          />
         </View>
       </PagerView>
     </AppWrapper>

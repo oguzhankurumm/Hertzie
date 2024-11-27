@@ -17,6 +17,9 @@ export type SongItem = {
   duration: number;
   artwork: string | null;
   url: string;
+  bitrate?: number;
+  language?: string;
+  location?: string;
   videoUrl: string | null;
   type: SongType;
   isFavorite: boolean;

@@ -4,7 +4,7 @@ import { TextStyleTypes } from '_styles/typography';
 import MainTypes from '_types/index';
 
 type InnerHeaderProps = MainTypes & {
-  title: string;
+  title?: string;
   titlePosition?: 'center' | 'left';
   showBackIcon?: boolean;
   showSearchIcon?: boolean;

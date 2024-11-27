@@ -18,6 +18,7 @@ const CustomClickableIcon: React.FC<CustomClickableIconPropsTypes> = ({
   disabled = false,
   testId = '',
   overrideStyle,
+  overrideIconStyle,
   onPress,
 }) => {
   const theme = useTheme();
@@ -45,6 +46,7 @@ const CustomClickableIcon: React.FC<CustomClickableIconPropsTypes> = ({
               width: iconWidth,
               height: iconHeight,
             },
+            overrideIconStyle,
           ]}
         />
       )}

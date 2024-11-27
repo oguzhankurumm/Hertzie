@@ -15,6 +15,7 @@ export const themes = {
     warning: colors.orange,
     danger: colors.rose,
     disabled: colors.slate,
+    divider: '#D9D9D9',
     gray: {
       50: '#FAFAFA',
       100: '#F4F4F4',
@@ -87,6 +88,8 @@ export const themes = {
     gray3: '#A8A6A2',
     gray4: '#797979',
     gray5: '#959595',
+    gray6: '#707070',
+    gray7: '#898787',
   } as ThemeType,
 };
 

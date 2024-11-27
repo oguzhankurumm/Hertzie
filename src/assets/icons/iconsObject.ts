@@ -54,7 +54,6 @@ const iconsObject = {
   proBuySell: require('./common/pro-buy-sell-dark.png'),
   regularPurchase: require('./common/regular-purchase-dark.png'),
   threeBubble: require('./common/three-bubble-dark.png'),
-  earth: require('./common/earth-dark.png'),
   ratesLimitsDark: require('./common/rates-limits-dark.png'),
   blogchainBlog: require('./common/blogchain-blog-dark.png'),
   dictionary: require('./common/dictionary-dark.png'),
@@ -130,6 +129,7 @@ const iconsObject = {
   bookOpen: require('./hertzie/book-open.png'),
   filter: require('./hertzie/filter.png'),
   sortOutline: require('./hertzie/flowbite_sort-outline.png'),
+  sortOutline2: require('./hertzie/sort-outline.png'),
   heart: require('./hertzie/heart.png'),
   image: require('./hertzie/image.png'),
   symbolsCheck: require('./hertzie/material-symbols_check.png'),
@@ -152,6 +152,11 @@ const iconsObject = {
   video: require('./hertzie/video.png'),
   infoOutline: require('./hertzie/info-outline.png'),
   share: require('./hertzie/share.png'),
+  earth: require('./hertzie/earth.png'),
+  enFlag: require('./flags/en.png'),
+  addImage: require('./hertzie/add-image.png'),
+  grid: require('./hertzie/grid.png'),
+  list: require('./hertzie/list.png'),
 };
 
 const navBarIcons = {};

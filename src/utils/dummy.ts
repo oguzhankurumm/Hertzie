@@ -1,5 +1,11 @@
 import { SongItem } from '_stores/songsStore';
 
+enum SongType {
+  Audio = 'audio',
+  Video = 'video',
+  Radio = 'radio',
+}
+
 export const popularDummySongs: SongItem[] = [
   {
     id: '1',
@@ -11,7 +17,7 @@ export const popularDummySongs: SongItem[] = [
     artwork: null,
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: false,
   },
   {
@@ -25,7 +31,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'audio',
+    type: SongType.Audio,
     isFavorite: true,
   },
   {
@@ -39,7 +45,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: false,
   },
   {
@@ -53,7 +59,10 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'radio',
+    type: SongType.Radio,
+    bitrate: 128,
+    language: 'Turkish',
+    location: 'Istanbul, Turkey',
     isFavorite: true,
   },
   {
@@ -67,7 +76,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: false,
   },
   {
@@ -81,7 +90,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'audio',
+    type: SongType.Audio,
     isFavorite: true,
   },
   {
@@ -95,7 +104,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: false,
   },
   {
@@ -109,7 +118,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'audio',
+    type: SongType.Audio,
     isFavorite: false,
   },
   {
@@ -123,7 +132,10 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'radio',
+    type: SongType.Radio,
+    bitrate: 128,
+    language: 'Turkish',
+    location: 'Istanbul, Turkey',
     isFavorite: true,
   },
   {
@@ -137,7 +149,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: true,
   },
   {
@@ -151,7 +163,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: 'https://download.samplelib.com/mp4/sample-5s.mp4',
-    type: 'video',
+    type: SongType.Video,
     isFavorite: false,
   },
   {
@@ -165,7 +177,7 @@ export const popularDummySongs: SongItem[] = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTHXxtkDmqIVKH3rpNxMctBR8lMZvnXmD0g&s',
     url: 'https://download.samplelib.com/mp3/sample-12s.mp3',
     videoUrl: null,
-    type: 'audio',
+    type: SongType.Audio,
     isFavorite: true,
   },
   // Repeat the structure for 8 more songs to reach 20.

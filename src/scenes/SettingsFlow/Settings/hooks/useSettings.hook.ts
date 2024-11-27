@@ -1,5 +1,8 @@
 import { useMemo } from 'react';
 
+import NavigationServices from '_navigations/NavigationServices';
+import Scenes from '_navigations/Scenes';
+
 const useSettings = () => {
   interface SettingItemType {
     title: string;
@@ -11,8 +14,10 @@ const useSettings = () => {
     () => [
       {
         title: 'Account and Subscription',
-        onPress: () => {},
-        disabled: true,
+        onPress: () => {
+          NavigationServices.navigate(Scenes.account);
+        },
+        disabled: false,
       },
       {
         title: 'Try premium for free',
@@ -21,7 +26,9 @@ const useSettings = () => {
       },
       {
         title: 'Playback and Hertz',
-        onPress: () => {},
+        onPress: () => {
+          NavigationServices.navigate(Scenes.playbackAndHertz);
+        },
         disabled: false,
       },
       {
@@ -41,7 +48,9 @@ const useSettings = () => {
       },
       {
         title: 'Scan Media',
-        onPress: () => {},
+        onPress: () => {
+          NavigationServices.navigate(Scenes.scanMusic);
+        },
         disabled: false,
       },
       {
@@ -51,7 +60,9 @@ const useSettings = () => {
       },
       {
         title: 'Equalizer',
-        onPress: () => {},
+        onPress: () => {
+          NavigationServices.navigate(Scenes.equalizer);
+        },
         disabled: false,
       },
       {
@@ -61,7 +72,9 @@ const useSettings = () => {
       },
       {
         title: 'Language',
-        onPress: () => {},
+        onPress: () => {
+          NavigationServices.navigate(Scenes.selectLanguage);
+        },
         disabled: false,
       },
       {
@@ -76,7 +89,9 @@ const useSettings = () => {
       },
       {
         title: 'Feedback',
-        onPress: () => {},
+        onPress: () => {
+          NavigationServices.navigate(Scenes.feedback);
+        },
         disabled: false,
       },
       {

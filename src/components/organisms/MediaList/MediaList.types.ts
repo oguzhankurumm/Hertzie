@@ -8,6 +8,7 @@ type MediaListProps = MainTypes & {
   type: SongType;
   mode?: 'list' | 'grid';
   showHeader?: boolean;
+  showMoreIcon?: boolean;
   showShuffleButton?: boolean;
   showPlayButton?: boolean;
   showAddButton?: boolean;

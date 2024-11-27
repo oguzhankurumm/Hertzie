@@ -8,7 +8,6 @@ import { useTheme } from '_styles/theming';
 import { getAutomationTestingProp } from '_utils/helpers';
 
 import CustomText from '../CustomText/CustomText.component';
-import { RenderHtmlContent } from '../RenderHtmlContent/RenderHtmlContent';
 import styles, { getStyleByStatus } from './CustomCheckBox.style';
 import { CustomCheckBoxPropsTypes } from './CustomCheckBox.types';
 
@@ -31,10 +30,10 @@ const CustomCheckBox: FC<CustomCheckBoxPropsTypes> = ({
   overrideClickableTextStyle,
   overrideDescriptionStyle,
   overrideHintTextStyle,
-  // overrideTitleFontStyle = 'bodyRegular',
-  overrideClickableTextFontStyle = 'bodyRegular',
-  overrideDescriptionFontStyle = 'bodyRegular',
-  overrideHintTextFontStyle = 'bodyRegular',
+  // overrideTitleFontStyle = 'medium14',
+  overrideClickableTextFontStyle = 'medium14',
+  overrideDescriptionFontStyle = 'medium14',
+  overrideHintTextFontStyle = 'medium14',
   testId = '',
 }) => {
   const theme = useTheme();
@@ -72,7 +71,7 @@ const CustomCheckBox: FC<CustomCheckBoxPropsTypes> = ({
         {...getAutomationTestingProp(testId)}>
         <View style={[checkboxContainerStyle, overrideCheckBoxStyle]}>
           {selected && !disabled && (
-            <IconCheck size={scale(12)} stroke={scale(4)} color={theme?.success[500]} />
+            <IconCheck size={scale(12)} stroke={scale(4)} color={theme?.white} />
           )}
         </View>
 
@@ -84,7 +83,12 @@ const CustomCheckBox: FC<CustomCheckBoxPropsTypes> = ({
             ]}>
             {title && (
               <View style={[overrideTitleStyle]}>
-                <RenderHtmlContent html={title} testId='customCheckBox.title.renderHtmlContent' />
+                <CustomText
+                  text={title}
+                  textFontStyle='semibold15'
+                  color={theme?.white}
+                  testId='customCheckBox.title.renderHtmlContent'
+                />
               </View>
             )}
             {/* <CustomText

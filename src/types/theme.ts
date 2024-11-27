@@ -74,6 +74,7 @@ export interface ThemeType {
     900: string;
     950: string;
   };
+  divider: string;
   gray: {
     50: string;
     100: string;
@@ -145,4 +146,6 @@ export interface ThemeType {
   gray3: string;
   gray4: string;
   gray5: string;
+  gray6: string;
+  gray7: string;
 }

@@ -82,6 +82,9 @@ const styles = (theme: ThemeType) =>
       width: scale(10),
       height: scale(10),
     },
+    videoListWrapperStyle: {
+      gap: scale(20),
+    },
   });
 
 export default styles;

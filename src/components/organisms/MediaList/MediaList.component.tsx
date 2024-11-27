@@ -15,6 +15,7 @@ const MediaList: FC<MediaListProps> = ({
   data,
   type = SongType.Audio,
   showHeader = true,
+  showMoreIcon = true,
   showShuffleButton = true,
   showPlayButton = true,
   showAddButton = false,
@@ -61,10 +62,10 @@ const MediaList: FC<MediaListProps> = ({
         renderItem={({ item }) => {
           return (
             <SongListCard
-              title={item?.title}
-              artists={item?.artists}
-              artwork={item?.artwork}
+              {...item}
+              type={type}
               onItemPress={() => onItemPress(item)}
+              showMoreIcon={showMoreIcon}
               onMorePress={() => {}}
             />
           );

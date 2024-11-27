@@ -4,6 +4,9 @@ import { TouchableOpacity, View } from 'react-native';
 import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomImage } from '_atoms';
+import { SongType } from '_stores/songsStore';
+import globalStyles from '_styles/globalStyles';
+import { scale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
 
 import CustomText from '../../atoms/CustomText/CustomText.component';
@@ -15,7 +18,12 @@ const SongListCard: FC<SongListCardPropsTypes> = ({
   title,
   artwork,
   artists,
+  bitrate,
+  language,
+  location,
+  type = SongType.Audio,
   onItemPress,
+  showMoreIcon = true,
   onMorePress,
   overrideContainerStyle,
 }) => {
@@ -40,16 +48,29 @@ const SongListCard: FC<SongListCardPropsTypes> = ({
       />
       <View style={textContainer}>
         <CustomText text={slicedTitle} textFontStyle='semibold14' color={theme?.gray2} />
-        <CustomText
-          text={artists.map(artist => artist).join(', ')}
-          textFontStyle='medium12'
-          color={theme?.gray4}
-          overrideStyle={textStyle}
-        />
+        {type === SongType.Audio && (
+          <CustomText
+            text={artists.map(artist => artist).join(', ')}
+            textFontStyle='medium12'
+            color={theme?.gray4}
+            overrideStyle={textStyle}
+          />
+        )}
+        {type === SongType.Radio && (
+          <View style={[globalStyles(theme)?.rowLeft, { gap: scale(8) }]}>
+            <CustomText text={language} textFontStyle='medium12' color={theme?.gray4} />
+            <CustomText text='•' textFontStyle='medium12' color={theme?.gray4} />
+            <CustomText text={location} textFontStyle='medium12' color={theme?.gray4} />
+            <CustomText text='•' textFontStyle='medium12' color={theme?.gray4} />
+            <CustomText text={`${bitrate}k`} textFontStyle='medium12' color={theme?.gray4} />
+          </View>
+        )}
       </View>
-      <TouchableOpacity activeOpacity={0.8} style={iconContainer} onPress={onMorePress}>
-        <CustomImage source={iconsObject?.moreHorizontal} overrideStyle={iconStyle} />
-      </TouchableOpacity>
+      {showMoreIcon && (
+        <TouchableOpacity activeOpacity={0.8} style={iconContainer} onPress={onMorePress}>
+          <CustomImage source={iconsObject?.moreHorizontal} overrideStyle={iconStyle} />
+        </TouchableOpacity>
+      )}
     </TouchableOpacity>
   );
 };

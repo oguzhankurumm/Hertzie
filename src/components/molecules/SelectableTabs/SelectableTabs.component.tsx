@@ -11,6 +11,7 @@ const SelectableTabs: FC<SelectableTabsPropsTypes> = ({
   tabs,
   selectedTab,
   onTabPress,
+  bounces = true,
   overrideContainerStyle,
 }) => {
   const theme = useTheme();
@@ -22,6 +23,7 @@ const SelectableTabs: FC<SelectableTabsPropsTypes> = ({
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
+        bounces={bounces}
         contentContainerStyle={[container, overrideContainerStyle]}>
         {tabs?.map((tab: string) => {
           const isSelected = selectedTab === tab;

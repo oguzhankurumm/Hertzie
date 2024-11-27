@@ -8,12 +8,36 @@ const styles = (theme: ThemeType) =>
     container: {
       flex: 1,
       paddingTop: 0,
-      paddingHorizontal: scale(16),
-      backgroundColor: theme?.white,
+      paddingHorizontal: 0,
     },
-    scrollView: {
-      paddingBottom: verticalScale(30),
-      backgroundColor: theme?.white,
+    innerHeaderStyle: {
+      backgroundColor: theme?.background,
+      paddingTop: verticalScale(24),
+    },
+    headerStyle: {
+      paddingHorizontal: scale(16),
+      marginBottom: verticalScale(12),
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    headerLeft: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      gap: scale(8),
+    },
+    headerIcon: {
+      width: scale(16),
+      height: scale(16),
+    },
+    listStyle: {
+      paddingHorizontal: scale(16),
+      paddingBottom: verticalScale(96),
+    },
+    tabsContainer: {
+      paddingHorizontal: scale(16),
+      marginBottom: verticalScale(14),
     },
   });
 

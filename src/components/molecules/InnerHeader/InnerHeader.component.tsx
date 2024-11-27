@@ -2,6 +2,7 @@ import { FC, useMemo } from 'react';
 import { View } from 'react-native';
 
 import { CustomClickableIcon, CustomText } from '_atoms';
+import NavigationServices from '_navigations/NavigationServices';
 import { useTheme } from '_styles/theming';
 
 import styles from './InnerHeader.style';
@@ -25,7 +26,7 @@ const InnerHeader: FC<InnerHeaderProps> = ({
   return (
     <View style={[container, overrideContainerStyle]}>
       {showBackIcon ? (
-        <CustomClickableIcon iconName='biArrowLeft' />
+        <CustomClickableIcon iconName='biArrowLeft' onPress={() => NavigationServices.goBack()} />
       ) : titlePosition === 'center' ? (
         <View style={iconStyle} />
       ) : null}
@@ -37,8 +38,8 @@ const InnerHeader: FC<InnerHeaderProps> = ({
         />
       )}
       <View style={titlePosition === 'left' ? [rightContainer, { flex: 1 }] : rightContainer}>
-        {showAddIcon && <CustomClickableIcon iconName='plus' onPress={onAddIconPress} />}
         {showSearchIcon && <CustomClickableIcon iconName='search' onPress={onSearchIconPress} />}
+        {showAddIcon && <CustomClickableIcon iconName='plus' onPress={onAddIconPress} />}
       </View>
     </View>
   );

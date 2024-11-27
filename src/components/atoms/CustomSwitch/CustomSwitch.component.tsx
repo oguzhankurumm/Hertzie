@@ -16,7 +16,7 @@ const CustomSwitch: FC<CustomSwitchPropsTypes> = ({
   overrideContainerStyle,
   overrideCircleStyle,
   overrideTextStyle,
-  overrideTextFontStyle = 'bodyMedium',
+  overrideTextFontStyle = 'body400',
   testId = '',
 }) => {
   const theme = useTheme();
@@ -34,6 +34,7 @@ const CustomSwitch: FC<CustomSwitchPropsTypes> = ({
   return (
     <TouchableOpacity
       disabled={disabled}
+      activeOpacity={0.8}
       style={[containerStyle, overrideContainerStyle]}
       onPress={onPress}
       {...getAutomationTestingProp(testId)}>

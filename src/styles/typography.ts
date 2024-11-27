@@ -97,6 +97,16 @@ export const TextStyle = StyleSheet.create({
   },
 
   // NEW
+  regular13: {
+    fontFamily: AppFonts.regular,
+    fontSize: moderateScale(13),
+    lineHeight: undefined,
+  },
+  regular15: {
+    fontFamily: AppFonts.regular,
+    fontSize: moderateScale(15),
+    lineHeight: undefined,
+  },
   bold13: {
     fontFamily: AppFonts.bold,
     fontSize: moderateScale(13),
@@ -127,14 +137,39 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(16),
     lineHeight: undefined,
   },
+  semibold20: {
+    fontFamily: AppFonts.semibold,
+    fontSize: moderateScale(20),
+    lineHeight: undefined,
+  },
+  semibold23: {
+    fontFamily: AppFonts.semibold,
+    fontSize: moderateScale(23),
+    lineHeight: undefined,
+  },
   medium8: {
     fontFamily: AppFonts.medium,
     fontSize: moderateScale(8),
     lineHeight: undefined,
   },
+  medium10: {
+    fontFamily: AppFonts.medium,
+    fontSize: moderateScale(10),
+    lineHeight: undefined,
+  },
   medium12: {
     fontFamily: AppFonts.medium,
     fontSize: moderateScale(12),
+    lineHeight: undefined,
+  },
+  medium14: {
+    fontFamily: AppFonts.medium,
+    fontSize: moderateScale(14),
+    lineHeight: undefined,
+  },
+  medium16: {
+    fontFamily: AppFonts.medium,
+    fontSize: moderateScale(16),
     lineHeight: undefined,
   },
   extraBold15: {
