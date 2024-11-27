@@ -18,6 +18,17 @@
     "preview": {
       "distribution": "internal"
     },
+    "preview2": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview3": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
     "production": {
       "autoIncrement": true
     }

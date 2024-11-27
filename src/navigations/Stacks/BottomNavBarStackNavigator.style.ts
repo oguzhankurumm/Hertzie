@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
@@ -11,7 +11,7 @@ const BottomNavBarStackNavigatorStyles = (_theme: ThemeType) =>
     },
     floatingPlayerStyle: {
       position: 'absolute',
-      bottom: verticalScale(85),
+      bottom: Platform.OS === 'ios' ? verticalScale(85) : verticalScale(65),
       left: 0,
       right: 0,
       zIndex: 100,

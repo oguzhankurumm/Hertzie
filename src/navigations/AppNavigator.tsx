@@ -50,6 +50,7 @@ const AppNavigator = () => {
             <MainStackNavigator.Group
               screenOptions={{
                 presentation: 'modal',
+                animation: 'slide_from_bottom',
                 header: getHeader,
                 headerShown: true,
               }}>

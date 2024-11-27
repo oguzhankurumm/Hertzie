@@ -5,9 +5,12 @@ import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomClickableIcon, CustomImage, CustomText } from '_atoms';
 import { PlayerProgressbar } from '_molecules';
+import NavigationServices from '_navigations/NavigationServices';
+import Scenes from '_navigations/Scenes';
 import { AppWrapper } from '_organisms';
 import { useSongsStore } from '_stores/songsStore';
 import { useTheme } from '_styles/theming';
+import { showToast } from '_utils/helpers';
 
 import styles, { getStyleByStatus } from './Player.style';
 import { usePlayer } from './hooks/usePlayer.hook';
@@ -79,8 +82,21 @@ const Player = () => {
           )}
         </View>
         <View style={songInfoContainerRight}>
-          <CustomClickableIcon iconName='plus' onPress={() => {}} />
-          <CustomClickableIcon iconName='moreVertical' onPress={() => {}} />
+          <CustomClickableIcon
+            iconName='plus'
+            onPress={() => {
+              NavigationServices.navigate(Scenes.createPlaylist);
+            }}
+          />
+          <CustomClickableIcon
+            iconName='moreVertical'
+            onPress={() => {
+              showToast({
+                title: 'This feature will be available soon',
+                type: 'info',
+              });
+            }}
+          />
         </View>
       </View>
 

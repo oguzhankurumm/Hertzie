@@ -48,11 +48,11 @@ const App = () => {
         {...props}
         style={{ borderLeftWidth: 0, backgroundColor: theme?.success[500] }}
         text1Style={{
-          ...TextStyle.body,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
         text2Style={{
-          ...TextStyle.body400,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
       />
@@ -62,11 +62,11 @@ const App = () => {
         {...props}
         style={{ borderLeftWidth: 0, backgroundColor: theme?.danger[500] }}
         text1Style={{
-          ...TextStyle.body,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
         text2Style={{
-          ...TextStyle.body400,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
       />
@@ -74,13 +74,13 @@ const App = () => {
     info: (props: any) => (
       <InfoToast
         {...props}
-        style={{ borderLeftWidth: 0, backgroundColor: theme?.info[500] }}
+        style={{ borderLeftWidth: 0, backgroundColor: theme?.black }}
         text1Style={{
-          ...TextStyle.body,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
         text2Style={{
-          ...TextStyle.body400,
+          ...TextStyle.semibold15,
           color: theme?.white,
         }}
       />
@@ -111,7 +111,7 @@ const App = () => {
             </GestureHandlerRootView>
           </I18nextProvider>
         </QueryClientProvider>
-        <Toast position='top' topOffset={verticalScale(56)} config={toastConfig} />
+        <Toast position='top' topOffset={verticalScale(72)} config={toastConfig} />
       </RootSiblingParent>
     )
   );

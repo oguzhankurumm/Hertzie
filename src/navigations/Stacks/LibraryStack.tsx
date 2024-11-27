@@ -16,6 +16,7 @@ const LibraryStack = () => {
       screenOptions={{
         gestureEnabled: true,
         headerShown: false,
+        animation: 'slide_from_right',
       }}>
       <LibraryStackNavigator.Screen name={Scenes.library} component={Library} />
       <LibraryStackNavigator.Screen name={Scenes.createPlaylist} component={CreatePlaylist} />

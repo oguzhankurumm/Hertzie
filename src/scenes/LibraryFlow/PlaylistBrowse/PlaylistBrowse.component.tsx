@@ -11,6 +11,7 @@ import { AppWrapper } from '_organisms';
 import globalStyles from '_styles/globalStyles';
 import { scale, verticalScale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
+import { showToast } from '_utils/helpers';
 
 import styles from './PlaylistBrowse.style';
 import { usePlaylistBrowse } from './hooks/usePlaylistBrowse.hook';
@@ -53,7 +54,13 @@ const PlaylistBrowse = () => {
               overrideStyle={buttonStyle}
               overrideFontStyle='semibold13'
               overrideTitleStyle={{ color: theme?.gray2 }}
-              onPress={() => NavigationServices.navigate(Scenes.playlistInside)}
+              onPress={() => {
+                showToast({
+                  title: 'In progress',
+                  type: 'info',
+                  description: 'This feature is in progress',
+                });
+              }}
               leftChild={
                 <CustomImage
                   source={iconsObject?.search}
