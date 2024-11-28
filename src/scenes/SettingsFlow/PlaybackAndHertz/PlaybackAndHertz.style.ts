@@ -16,8 +16,8 @@ const styles = (_theme: ThemeType) =>
       paddingBottom: verticalScale(96),
     },
     actionItemContainer: {
-      marginTop: verticalScale(22),
-      gap: verticalScale(22),
+      marginTop: verticalScale(16),
+      gap: verticalScale(16),
     },
     actionItem: {
       flex: 1,

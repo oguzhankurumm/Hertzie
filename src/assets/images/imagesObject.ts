@@ -12,6 +12,7 @@ const imagesObject = {
   radio: require('./radio.png'),
   music: require('./music.png'),
   video: require('./video.png'),
+  feedback: require('./feedback.png'),
 };
 
 export default imagesObject;

@@ -12,7 +12,7 @@ const styles = (theme: ThemeType) =>
     },
     listStyle: {
       paddingHorizontal: scale(16),
-      paddingTop: verticalScale(32),
+      paddingTop: verticalScale(16),
       paddingBottom: verticalScale(96),
     },
     actionItemContainer: {
@@ -20,11 +20,21 @@ const styles = (theme: ThemeType) =>
       marginBottom: verticalScale(36),
       gap: verticalScale(16),
     },
+    feedbackImageStyle: {
+      width: scale(120),
+      height: scale(120),
+    },
+    textRowContainer: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     textContainer: {
       justifyContent: 'center',
       alignItems: 'center',
     },
     textCenter: {
+      flex: 1,
       textAlign: 'center',
     },
     inputStyle: {

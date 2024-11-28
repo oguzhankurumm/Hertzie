@@ -7,18 +7,8 @@ import MainTypes from '_types/index';
 type CustomTextPropsTypes = MainTypes & {
   text?: string | null | number | boolean | ReactElement | Iterable<ReactNode>;
   color?: string;
-  fontWeight?:
-    | 'bold'
-    | 'normal'
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900';
+  highlightedTexts?: string[];
+  highlightColor?: string;
   overrideStyle?: StyleProp<TextStyle>;
   restTextProps?: TextProps;
   textFontStyle?: TextStyleTypes;

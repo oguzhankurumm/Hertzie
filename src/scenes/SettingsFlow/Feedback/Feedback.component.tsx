@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { ScrollView, TouchableOpacity, View } from 'react-native';
 
 import iconsObject from '_assets/icons/iconsObject';
+import imagesObject from '_assets/images/imagesObject';
 import { CustomButton, CustomCheckBox, CustomImage, CustomText, CustomTextInput } from '_atoms';
 import { InnerHeader } from '_molecules';
 import { AppWrapper } from '_organisms';
@@ -20,6 +21,8 @@ const Feedback = () => {
     container,
     listStyle,
     actionItemContainer,
+    feedbackImageStyle,
+    textRowContainer,
     textContainer,
     textCenter,
     inputStyle,
@@ -30,9 +33,20 @@ const Feedback = () => {
     <AppWrapper overrideStyle={container} removeSafeAreaView>
       <InnerHeader title='Feedback' />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
+        <View style={textRowContainer}>
+          <CustomImage source={imagesObject?.feedback} overrideStyle={feedbackImageStyle} />
+          <CustomText
+            text='Your thoughts matter.'
+            highlightedTexts={['matter.']}
+            textFontStyle='semibold23'
+            color={theme?.white}
+            overrideStyle={textCenter}
+          />
+        </View>
         <View style={textContainer}>
           <CustomText
             text='How can we make things better?'
+            highlightedTexts={['better?']}
             textFontStyle='semibold23'
             color={theme?.white}
             overrideStyle={textCenter}

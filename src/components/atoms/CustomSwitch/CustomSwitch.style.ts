@@ -11,7 +11,7 @@ const styles = ({ active = false }: { active: boolean }) =>
       justifyContent: 'space-between',
       alignSelf: 'flex-start',
       minWidth: scale(34),
-      height: verticalScale(16),
+      height: verticalScale(24),
       borderRadius: scale(12),
     },
     circleDefaultStyle: {

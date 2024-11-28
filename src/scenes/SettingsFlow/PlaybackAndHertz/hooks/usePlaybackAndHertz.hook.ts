@@ -5,8 +5,8 @@ const usePlaybackAndHertz = () => {
     { id: '1', title: 'Bass booster', active: true },
     { id: '2', title: 'Enable parallel play', active: false },
     { id: '3', title: 'Enable uninterruptet background play', active: false },
-    { id: '4', title: 'Pause on disconnect', active: false },
-    { id: '5', title: 'Resume on connect', active: false },
+    { id: '4', title: 'Pause on disconnect', active: true },
+    { id: '5', title: 'Resume on connect', active: true },
     { id: '6', title: 'Resume on bluetooth connect', active: false },
     { id: '7', title: 'Resume on bluetooth connect', active: false },
   ]);

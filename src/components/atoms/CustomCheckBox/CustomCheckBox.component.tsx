@@ -75,46 +75,44 @@ const CustomCheckBox: FC<CustomCheckBoxPropsTypes> = ({
           )}
         </View>
 
-        {title ||
-          clickableTextTitle ||
-          (description && (
-            <View style={[textContainerStyle, overrideTextContainerStyle]}>
-              <View
-                style={[
-                  titleAndClickableTextContainerStyle,
-                  overrideTitleAndClickableTextContainerStyle,
-                ]}>
-                {title && (
-                  <View style={[overrideTitleStyle]}>
-                    <CustomText
-                      text={title}
-                      textFontStyle='semibold15'
-                      color={theme?.white}
-                      testId='customCheckBox.title.renderHtmlContent'
-                    />
-                  </View>
-                )}
-                {clickableTextTitle && (
-                  <RenderTouchable onPress={onPressClickableText}>
-                    <CustomText
-                      text={clickableTextTitle}
-                      testId={`${testId}.clickableTextTitle`}
-                      overrideStyle={[titleTextStyle, overrideClickableTextStyle]}
-                      textFontStyle={overrideClickableTextFontStyle}
-                    />
-                  </RenderTouchable>
-                )}
-              </View>
-              {description && (
-                <CustomText
-                  text={description}
-                  testId={`${testId}.description`}
-                  overrideStyle={[descriptionTextStyle, overrideDescriptionStyle]}
-                  textFontStyle={overrideDescriptionFontStyle}
-                />
+        {(title || clickableTextTitle || description) && (
+          <View style={[textContainerStyle, overrideTextContainerStyle]}>
+            <View
+              style={[
+                titleAndClickableTextContainerStyle,
+                overrideTitleAndClickableTextContainerStyle,
+              ]}>
+              {title && (
+                <View style={[overrideTitleStyle]}>
+                  <CustomText
+                    text={title}
+                    textFontStyle='semibold15'
+                    color={theme?.white}
+                    testId='customCheckBox.title'
+                  />
+                </View>
+              )}
+              {clickableTextTitle && (
+                <RenderTouchable onPress={onPressClickableText}>
+                  <CustomText
+                    text={clickableTextTitle}
+                    testId={`${testId}.clickableTextTitle`}
+                    overrideStyle={[titleTextStyle, overrideClickableTextStyle]}
+                    textFontStyle={overrideClickableTextFontStyle}
+                  />
+                </RenderTouchable>
               )}
             </View>
-          ))}
+            {description && (
+              <CustomText
+                text={description}
+                testId={`${testId}.description`}
+                overrideStyle={[descriptionTextStyle, overrideDescriptionStyle]}
+                textFontStyle={overrideDescriptionFontStyle}
+              />
+            )}
+          </View>
+        )}
       </RenderTouchable>
       {((!!error && typeof error === 'string') || (!!hintText && typeof hintText === 'string')) && (
         <CustomText
