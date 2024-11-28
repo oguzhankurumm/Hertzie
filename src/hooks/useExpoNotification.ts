@@ -40,7 +40,7 @@ const useExpoNotification = () => {
     try {
       token = (
         await ExpoNotifications.getExpoPushTokenAsync({
-          ***REMOVED***: Constants.expoConfig?.extra?.eas.***REMOVED***,
+          projectId: Constants.expoConfig?.extra?.eas.projectId,
         })
       ).data;
       if (token) {

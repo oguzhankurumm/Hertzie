@@ -5,7 +5,7 @@ const AppConfig = ({ config }: { config: any }) => {
       appVersion: '1.0',
       apiEnv: process.env.API_ENV,
       eas: {
-        ***REMOVED***: '***REMOVED***',
+        projectId: '2bb554bb-b88f-4b42-bdec-bdfd5f5887aa',
       },
     },
     plugins: [

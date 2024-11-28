@@ -9,7 +9,7 @@ const HeaderMainSyles = (theme: ThemeType) => {
       backgroundColor: theme?.tabBackground,
       ...Platform.select({
         android: {
-          paddingTop: verticalScale(36),
+          paddingTop: verticalScale(42),
         },
       }),
     },
@@ -18,7 +18,7 @@ const HeaderMainSyles = (theme: ThemeType) => {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: theme?.tabBackground,
-      marginTop: verticalScale(-24),
+      marginTop: verticalScale(-16),
     },
     logoContainer: {
       width: scale(70),
