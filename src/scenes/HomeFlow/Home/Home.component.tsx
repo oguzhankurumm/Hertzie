@@ -8,6 +8,8 @@ import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomImage, CustomText, Divider } from '_atoms';
 import { PlaylistCard, SelectableTabs, VideoCard } from '_molecules';
+import NavigationServices from '_navigations/NavigationServices';
+import Scenes from '_navigations/Scenes';
 import { AppWrapper, MediaList } from '_organisms';
 import { SongItem, SongType, useSongsStore } from '_stores/songsStore';
 import globalStyles from '_styles/globalStyles';
@@ -171,6 +173,7 @@ const Home = () => {
                 showPinIcon={index === 0}
                 type='list'
                 {...item}
+                onItemPress={() => NavigationServices.navigate(Scenes.playlist2)}
                 overrideContainerStyle={{ marginBottom: verticalScale(16) }}
               />
             )}

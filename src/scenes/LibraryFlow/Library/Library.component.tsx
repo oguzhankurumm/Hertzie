@@ -48,7 +48,7 @@ const Library = () => {
       <InnerHeader
         title='Your Library'
         titlePosition='left'
-        showBackIcon
+        showBackIcon={false}
         showAddIcon
         onAddIconPress={() => NavigationServices.navigate(Scenes.createPlaylist)}
         overrideContainerStyle={innerHeaderStyle}

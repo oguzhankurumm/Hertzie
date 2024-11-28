@@ -31,7 +31,7 @@ const Feedback = () => {
   } = useMemo(() => styles(theme), [theme]);
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Feedback' />
+      <InnerHeader title='Feedback' showSearchIcon={false} />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
         <View style={textRowContainer}>
           <CustomImage source={imagesObject?.feedback} overrideStyle={feedbackImageStyle} />

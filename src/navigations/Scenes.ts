@@ -23,6 +23,7 @@ const Scenes = {
   playlistSelectMusic: 'PlaylistSelectMusic',
   browseArtists: 'BrowseArtists',
   playlist: 'Playlist',
+  playlist2: 'Playlist2',
 };
 
 export default Scenes;

@@ -21,7 +21,7 @@ const SelectLanguage = () => {
   );
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Select Language' />
+      <InnerHeader title='Select Language' showSearchIcon={false} />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
         <View style={actionItemContainer}>
           {languageItems.map(item => (

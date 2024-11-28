@@ -155,11 +155,11 @@ const Player = () => {
           </View>
         </View>
         <SongDetailBottomSheet
+          bottomSheetRef={songDetailBottomSheetRef}
           onInfoPress={() => {
             songDetailBottomSheetRef?.current?.close();
             songInfoBottomSheetRef?.current?.expand();
           }}
-          bottomSheetRef={songDetailBottomSheetRef}
         />
         <SongInfoBottomSheet bottomSheetRef={songInfoBottomSheetRef} />
       </AppWrapper>

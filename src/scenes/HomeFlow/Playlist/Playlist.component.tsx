@@ -6,6 +6,8 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import imagesObject from '_assets/images/imagesObject';
 import { CustomImage } from '_atoms';
 import { InnerHeader, SearchBar } from '_molecules';
+import NavigationServices from '_navigations/NavigationServices';
+import Scenes from '_navigations/Scenes';
 import { AppWrapper, MediaList } from '_organisms';
 import { SongType, useSongsStore } from '_stores/songsStore';
 import globalStyles from '_styles/globalStyles';
@@ -66,6 +68,9 @@ const Playlist = () => {
             showMoreIcon
             showPlayButton
             scrollEnabled={false}
+            onAddPress={() => {
+              NavigationServices.navigate(Scenes.addToPlaylist);
+            }}
           />
         </ScrollView>
       </AppWrapper>

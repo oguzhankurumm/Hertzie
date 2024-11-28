@@ -20,7 +20,7 @@ const PlaybackAndHertz = () => {
   );
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Playback And Hertz' />
+      <InnerHeader title='Playback And Hertz' showSearchIcon={false} />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
         <CustomText text='Set Default Hertz' textFontStyle='semibold14' color={theme?.gray2} />
         <View style={actionItemContainer}>

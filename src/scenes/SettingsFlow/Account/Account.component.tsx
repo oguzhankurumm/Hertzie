@@ -19,7 +19,7 @@ const Account = () => {
   );
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Account' />
+      <InnerHeader title='Account' showSearchIcon={false} />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
         <CustomText text='Account Details' textFontStyle='semibold20' color={theme?.gray2} />
         <View style={actionItemContainer}>

@@ -27,7 +27,7 @@ const ScanMusic = () => {
   } = useMemo(() => styles(theme), [theme]);
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Scan Music' />
+      <InnerHeader title='Scan Music' showSearchIcon={false} />
       <ScrollView contentContainerStyle={listStyle} showsVerticalScrollIndicator={false}>
         <View style={lottieContainer}>
           <LottieView

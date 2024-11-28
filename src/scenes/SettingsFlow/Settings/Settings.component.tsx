@@ -23,7 +23,7 @@ const Settings = () => {
 
   return (
     <AppWrapper overrideStyle={container} removeSafeAreaView>
-      <InnerHeader title='Settings' />
+      <InnerHeader title='Settings' showSearchIcon={false} />
       <FlatList
         data={settingsItems}
         contentContainerStyle={listStyle}
