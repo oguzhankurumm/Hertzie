@@ -14,14 +14,15 @@ import { useTheme } from '_styles/theming';
 
 import { useHome } from '../Home/hooks/useHome.hook';
 import styles from './Playlist.style';
-import { usePlaylist } from './hooks/usePlaylist.hook';
+
+// import { usePlaylist } from './hooks/usePlaylist.hook';
 
 const Playlist = () => {
   const theme = useTheme();
 
   const { currentSong } = useSongsStore();
-  const { onMorePress } = usePlaylist();
-  const { filteredSongs } = useHome();
+  // const { onMorePress } = usePlaylist();
+  const { filteredSongs, onItemPress } = useHome();
 
   const { container, innerHeaderStyle, artworkStyle } = useMemo(() => styles(theme), [theme]);
 
@@ -60,7 +61,7 @@ const Playlist = () => {
             type={SongType.Audio}
             mode='list'
             customBigTitle='Playlist Name'
-            onItemPress={() => {}}
+            onItemPress={onItemPress}
             showAddButton
             showMoreIcon
             showPlayButton
