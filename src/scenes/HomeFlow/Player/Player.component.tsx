@@ -83,74 +83,76 @@ const Player = () => {
           placeholder={imagesObject?.songPlaceholder}
         />
 
-        {/* SONG INFO */}
-        <View style={songInfoContainer}>
-          <View style={songDetailsContainer}>
-            <CustomText
-              text={currentSong?.title}
-              textFontStyle='semibold16'
-              color={theme?.gray2}
-              restTextProps={{
-                numberOfLines: 1,
-              }}
-            />
-            {currentSong?.artists && (
+        <View style={{ flex: 1, width: '100%' }}>
+          {/* SONG INFO */}
+          <View style={songInfoContainer}>
+            <View style={songDetailsContainer}>
               <CustomText
-                text={currentSong?.artists}
-                textFontStyle='medium12'
-                color={theme?.gray4}
+                text={currentSong?.title}
+                textFontStyle='semibold16'
+                color={theme?.gray2}
+                restTextProps={{
+                  numberOfLines: 1,
+                }}
               />
-            )}
+              {currentSong?.artists && (
+                <CustomText
+                  text={currentSong?.artists}
+                  textFontStyle='medium12'
+                  color={theme?.gray4}
+                />
+              )}
+            </View>
+            <View style={songInfoContainerRight}>
+              <CustomClickableIcon
+                iconName='plus'
+                onPress={() => {
+                  NavigationServices.navigate(Scenes.addToPlaylist);
+                }}
+              />
+              <CustomClickableIcon iconName='moreVertical' onPress={onMorePress} />
+            </View>
           </View>
-          <View style={songInfoContainerRight}>
-            <CustomClickableIcon
-              iconName='plus'
-              onPress={() => {
-                NavigationServices.navigate(Scenes.addToPlaylist);
-              }}
-            />
-            <CustomClickableIcon iconName='moreVertical' onPress={onMorePress} />
+
+          {/* SLIDER */}
+          <PlayerProgressbar />
+
+          {/* CONTROLS */}
+          <View style={controlsContainer}>
+            <TouchableOpacity activeOpacity={0.8} onPress={toggleShuffleMode}>
+              <CustomImage
+                source={iconsObject?.shuffle}
+                overrideStyle={getStyleByStatus(theme, shuffleMode)?.controlIcon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <CustomImage
+                source={iconsObject?.skipBack}
+                overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={controlPlayPauseButton}
+              onPress={togglePlaying}>
+              <CustomImage
+                source={isPlaying ? iconsObject?.pauseFill : iconsObject?.playFill}
+                overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <CustomImage
+                source={iconsObject?.skipForward}
+                overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8} onPress={toggleRepeatMode}>
+              <CustomImage
+                source={iconsObject?.repeat}
+                overrideStyle={getStyleByStatus(theme, repeatMode)?.controlIcon}
+              />
+            </TouchableOpacity>
           </View>
-        </View>
-
-        {/* SLIDER */}
-        <PlayerProgressbar />
-
-        {/* CONTROLS */}
-        <View style={controlsContainer}>
-          <TouchableOpacity activeOpacity={0.8} onPress={toggleShuffleMode}>
-            <CustomImage
-              source={iconsObject?.shuffle}
-              overrideStyle={getStyleByStatus(theme, shuffleMode)?.controlIcon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8}>
-            <CustomImage
-              source={iconsObject?.skipBack}
-              overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            style={controlPlayPauseButton}
-            onPress={togglePlaying}>
-            <CustomImage
-              source={isPlaying ? iconsObject?.pauseFill : iconsObject?.playFill}
-              overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8}>
-            <CustomImage
-              source={iconsObject?.skipForward}
-              overrideStyle={getStyleByStatus(theme, false)?.controlIcon}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={toggleRepeatMode}>
-            <CustomImage
-              source={iconsObject?.repeat}
-              overrideStyle={getStyleByStatus(theme, repeatMode)?.controlIcon}
-            />
-          </TouchableOpacity>
         </View>
         <SongDetailBottomSheet
           onInfoPress={() => {

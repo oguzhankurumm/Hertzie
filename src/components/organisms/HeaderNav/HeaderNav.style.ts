@@ -22,7 +22,7 @@ const HeaderNavSyles = (theme: ThemeType, safeAreaInsets: EdgeInsets) => {
       ...Platform.select({
         android: {
           // paddingTop: safeAreaTop + verticalScale(10),
-          paddingTop: safeAreaTop,
+          paddingTop: safeAreaTop + verticalScale(10),
         },
         ios: {},
       }),

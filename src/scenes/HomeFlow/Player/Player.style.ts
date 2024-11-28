@@ -20,11 +20,12 @@ const PlayerStyles = (theme: ThemeType) =>
       marginTop: verticalScale(24),
     },
     songInfoContainer: {
-      flex: 1,
       width: '100%',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      marginTop: verticalScale(16),
+      marginBottom: verticalScale(32),
     },
     songDetailsContainer: {
       flex: 1,
@@ -46,6 +47,7 @@ const PlayerStyles = (theme: ThemeType) =>
       marginTop: verticalScale(16),
       marginBottom: verticalScale(32),
       paddingHorizontal: scale(12),
+      left: scale(2),
     },
     controlIcon: {
       width: scale(32),

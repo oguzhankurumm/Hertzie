@@ -29,6 +29,7 @@ const styles = (theme: ThemeType) =>
     playlistTypeItemCardImage: {
       width: scale(110),
       height: scale(110),
+      left: scale(-4),
     },
     buttonContainer: {
       width: '100%',

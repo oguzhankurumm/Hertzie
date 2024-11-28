@@ -1,5 +1,7 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { RefObject, useCallback, useMemo, useRef, useState } from 'react';
 import PagerView from 'react-native-pager-view';
+
+import BottomSheet from '@gorhom/bottom-sheet';
 
 import { useTranslate } from '_hooks/useTranslate';
 import { useSongsStore } from '_stores/songsStore';
@@ -12,6 +14,7 @@ export enum LibraryShownType {
 const useLibrary = () => {
   const { translate } = useTranslate();
   const { songs, setCurrentSong } = useSongsStore();
+  const sortBottomSheetRef: RefObject<BottomSheet> = useRef(null);
 
   const tabs: string[] = useMemo(() => ['Playlists', 'Videos', 'Radios'], []);
   const [selectedTab, setSelectedTab] = useState<string>('Playlists');
@@ -19,8 +22,6 @@ const useLibrary = () => {
   const [shownType, setShownType] = useState<LibraryShownType>(LibraryShownType.Grid);
 
   const pagerRef = useRef<PagerView>(null);
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [showSortModal, setShowSortModal] = useState<boolean>(false);
 
   const onTabPress = useCallback(
     (tab: string) => {
@@ -39,8 +40,7 @@ const useLibrary = () => {
     shownType,
     setShownType,
     songs,
-    showSortModal,
-    setShowSortModal,
+    sortBottomSheetRef,
   };
 };
 

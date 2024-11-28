@@ -4,6 +4,7 @@ import PagerView from 'react-native-pager-view';
 
 import iconsObject from '_assets/icons/iconsObject';
 import { CustomClickableIcon, CustomImage, CustomText } from '_atoms';
+import { SortByBottomSheet } from '_modals';
 import { InnerHeader, PlaylistCard, SelectableTabs, VideoCard } from '_molecules';
 import NavigationServices from '_navigations/NavigationServices';
 import Scenes from '_navigations/Scenes';
@@ -29,8 +30,7 @@ const Library = () => {
     onTabPress,
     shownType,
     setShownType,
-    showSortModal,
-    setShowSortModal,
+    sortBottomSheetRef,
   } = useLibrary();
 
   const {
@@ -61,7 +61,12 @@ const Library = () => {
         overrideContainerStyle={tabsContainer}
       />
       <View style={headerStyle}>
-        <TouchableOpacity style={headerLeft} activeOpacity={0.8} onPress={() => {}}>
+        <TouchableOpacity
+          style={headerLeft}
+          activeOpacity={0.8}
+          onPress={() => {
+            sortBottomSheetRef.current?.expand();
+          }}>
           <CustomImage source={iconsObject?.sortOutline2} overrideStyle={headerIcon} />
           <CustomText text='Recents' textFontStyle='semibold13' color={theme?.gray2} />
         </TouchableOpacity>
@@ -94,6 +99,7 @@ const Library = () => {
                   showPinIcon={index === 0}
                   type='grid'
                   {...item}
+                  onItemPress={() => NavigationServices.navigate(Scenes.playlist)}
                   overrideContainerStyle={{
                     marginBottom: verticalScale(16),
                   }}
@@ -116,6 +122,7 @@ const Library = () => {
                   showPinIcon={index === 0}
                   type='list'
                   {...item}
+                  onItemPress={() => NavigationServices.navigate(Scenes.playlist)}
                   overrideContainerStyle={{ marginBottom: verticalScale(16) }}
                 />
               )}
@@ -178,6 +185,7 @@ const Library = () => {
           />
         </View>
       </PagerView>
+      <SortByBottomSheet bottomSheetRef={sortBottomSheetRef} />
     </AppWrapper>
   );
 };

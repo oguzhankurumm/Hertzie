@@ -6,9 +6,8 @@ import { ThemeType } from '_types/theme';
 const styles = (theme: ThemeType) =>
   StyleSheet.create({
     sliderContainer: {
-      flex: 1,
       width: '100%',
-      gap: verticalScale(8),
+      gap: verticalScale(12),
     },
     sliderTrack: {
       width: '100%',

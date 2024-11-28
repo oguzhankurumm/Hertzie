@@ -11,6 +11,15 @@ const FloatingPlayerStyles = (theme: ThemeType) =>
       backgroundColor: theme?.black,
       paddingVertical: verticalScale(8),
       paddingHorizontal: scale(24),
+      // shadow to top
+      shadowColor: theme?.black,
+      shadowOffset: {
+        width: 0,
+        height: -verticalScale(32),
+      },
+      shadowOpacity: 0.35,
+      shadowRadius: verticalScale(16),
+      elevation: 4,
     },
     trackTitleContainer: {
       flex: 1,
