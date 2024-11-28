@@ -36,6 +36,7 @@ const PlayerStyles = (theme: ThemeType) =>
       justifyContent: 'space-between',
       alignItems: 'center',
       gap: scale(8),
+      right: scale(-8),
     },
     controlsContainer: {
       width: '100%',
@@ -69,6 +70,7 @@ const PlayerStyles = (theme: ThemeType) =>
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      left: scale(-24),
     },
   });
 

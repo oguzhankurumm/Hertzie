@@ -12,28 +12,18 @@ const styles = (theme: ThemeType) =>
     },
     playlistInputContainer: {
       width: '100%',
-      marginVertical: verticalScale(32),
+      marginVertical: verticalScale(96),
       paddingHorizontal: scale(40),
     },
-    playlistTypeItemContainer: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: scale(16),
+    playlistNameInputContainerStyle: {
+      borderWidth: 0,
+      borderBottomWidth: verticalScale(2),
+      borderBottomColor: theme?.white,
     },
-    playlistTypeItemCardImageContainer: {
-      width: scale(170),
-      height: scale(170),
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: scale(6),
-      borderColor: theme?.purple,
-      borderWidth: scale(1),
-      padding: scale(8),
-      backgroundColor: theme?.black,
-    },
-    playlistTypeItemCardImage: {
-      width: scale(110),
-      height: scale(110),
+    playlistNameInputStyle: {
+      width: '100%',
+      borderWidth: 0,
+      textAlign: 'center',
     },
     buttonsContainer: {
       width: '100%',

@@ -102,9 +102,20 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(13),
     lineHeight: undefined,
   },
+  regular14: {
+    fontFamily: AppFonts.regular,
+    fontSize: moderateScale(14),
+    lineHeight: undefined,
+  },
   regular15: {
     fontFamily: AppFonts.regular,
     fontSize: moderateScale(15),
+    lineHeight: undefined,
+  },
+  medium18: {
+    fontFamily: AppFonts.medium,
+    fontWeight: '600',
+    fontSize: moderateScale(18),
     lineHeight: undefined,
   },
   bold13: {
@@ -112,9 +123,9 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(13),
     lineHeight: undefined,
   },
-  semibold14: {
+  semibold11: {
     fontFamily: AppFonts.semibold,
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(12),
     lineHeight: undefined,
   },
   semibold12: {
@@ -125,6 +136,11 @@ export const TextStyle = StyleSheet.create({
   semibold13: {
     fontFamily: AppFonts.semibold,
     fontSize: moderateScale(13),
+    lineHeight: undefined,
+  },
+  semibold14: {
+    fontFamily: AppFonts.semibold,
+    fontSize: moderateScale(14),
     lineHeight: undefined,
   },
   semibold15: {
@@ -172,13 +188,27 @@ export const TextStyle = StyleSheet.create({
     fontSize: moderateScale(16),
     lineHeight: undefined,
   },
+  medium22: {
+    fontFamily: AppFonts.medium,
+    fontWeight: '500',
+    fontSize: moderateScale(22),
+    lineHeight: undefined,
+  },
+  extraBold11: {
+    fontFamily: AppFonts.extrabold,
+    fontWeight: '800',
+    fontSize: moderateScale(11),
+    lineHeight: undefined,
+  },
   extraBold15: {
     fontFamily: AppFonts.extrabold,
+    fontWeight: '800',
     fontSize: moderateScale(15),
     lineHeight: undefined,
   },
   extraBold16: {
     fontFamily: AppFonts.extrabold,
+    fontWeight: '800',
     fontSize: moderateScale(16),
     lineHeight: undefined,
   },

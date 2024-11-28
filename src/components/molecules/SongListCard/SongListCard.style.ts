@@ -16,6 +16,11 @@ const styles = (_theme: ThemeType) =>
       height: scale(48),
       borderRadius: scale(8),
     },
+    compactImageStyle: {
+      width: scale(40),
+      height: scale(40),
+      borderRadius: scale(8),
+    },
     textStyle: {
       marginTop: verticalScale(2),
     },

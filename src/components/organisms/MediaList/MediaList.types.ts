@@ -5,6 +5,7 @@ import MainTypes from '_types/index';
 
 type MediaListProps = MainTypes & {
   data: SongItem[];
+  customBigTitle?: string;
   type: SongType;
   mode?: 'list' | 'grid';
   showHeader?: boolean;
@@ -16,6 +17,10 @@ type MediaListProps = MainTypes & {
   onPlayPress?: () => void;
   onAddPress?: () => void;
   onItemPress: (song: SongItem) => void;
+  selectable?: boolean;
+  selected?: boolean;
+  toggleSelected?: () => void;
+  scrollEnabled?: boolean;
   overrideContainerStyle?: StyleProp<ViewStyle>;
 };
 

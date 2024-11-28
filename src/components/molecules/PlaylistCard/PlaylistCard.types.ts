@@ -8,6 +8,9 @@ type PlaylistCardPropsTypes = {
   count?: number;
   type?: 'list' | 'grid';
   showPinIcon?: boolean;
+  selectable?: boolean;
+  selected?: boolean;
+  toggleSelected?: () => void;
   onItemPress?: () => void;
   overrideContainerStyle?: StyleProp<ViewStyle>;
 };

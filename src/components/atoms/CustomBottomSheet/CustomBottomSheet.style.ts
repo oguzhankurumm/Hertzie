@@ -10,16 +10,24 @@ const styles = (theme: ThemeType) =>
       marginHorizontal: scale(25),
     },
     modalStyle: {
-      backgroundColor: theme?.gray[100],
+      backgroundColor: theme?.background,
       paddingTop: verticalScale(16),
+      borderTopLeftRadius: scale(32),
+      borderTopRightRadius: scale(32),
+      borderLeftWidth: scale(0.2),
+      borderLeftColor: theme?.purple,
+      borderRightWidth: scale(0.2),
+      borderRightColor: theme?.purple,
+      borderTopWidth: scale(2),
+      borderTopColor: theme?.purple,
     },
     handleStyle: {
       backgroundColor: theme?.gray[500],
     },
     contentContainer: {
       marginHorizontal: scale(15),
-      borderBottomLeftRadius: scale(13),
-      borderBottomRightRadius: scale(13),
+      borderBottomLeftRadius: scale(32),
+      borderBottomRightRadius: scale(32),
     },
     handleIndicatorStyle: { display: 'none' },
     alertModalContainerStyle: {

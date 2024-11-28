@@ -10,9 +10,13 @@ type SongListCardPropsTypes = {
   location?: SongItem['location'];
   language?: SongItem['language'];
   type?: SongItem['type'];
+  mode?: 'compact' | 'full';
   showMoreIcon?: boolean;
   onMorePress?: () => void;
   onItemPress?: () => void;
+  selectable?: boolean;
+  selected?: boolean;
+  toggleSelected?: () => void;
   overrideContainerStyle?: StyleProp<ViewStyle>;
 };
 

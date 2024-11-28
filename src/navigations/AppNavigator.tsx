@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { GlobalLoader } from '_molecules';
 import { HeaderMain } from '_organisms';
 import Player from '_scenes/HomeFlow/Player/Player.component';
+import AddToPlaylist from '_scenes/LibraryFlow/AddToPlaylist/AddToPlaylist.component';
 import Welcome from '_scenes/Welcome/Welcome.component';
 import { useAuthStore } from '_stores/authStore';
 import { IThemeProviders, themes } from '_styles/theming';
@@ -47,15 +48,26 @@ const AppNavigator = () => {
               name={StackNames.authenticationStack}
               component={AuthenticationStack}
             />
-            <MainStackNavigator.Group
-              screenOptions={{
-                presentation: 'modal',
+            <MainStackNavigator.Screen
+              name={Scenes.addToPlaylist}
+              component={AddToPlaylist}
+              options={{
                 animation: 'slide_from_bottom',
+                gestureDirection: 'vertical',
                 header: getHeader,
                 headerShown: true,
-              }}>
-              <MainStackNavigator.Screen name={Scenes.player} component={Player} />
-            </MainStackNavigator.Group>
+              }}
+            />
+            <MainStackNavigator.Screen
+              name={Scenes.player}
+              component={Player}
+              options={{
+                animation: 'slide_from_bottom',
+                gestureDirection: 'vertical',
+                header: getHeader,
+                headerShown: true,
+              }}
+            />
           </>
         ) : (
           <MainStackNavigator.Screen name={StackNames.splashStack} component={SplashStack} />

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 
 import { CustomClickableIcon, CustomText } from '_atoms';
 import NavigationServices from '_navigations/NavigationServices';
+import { scale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
 
 import styles from './InnerHeader.style';
@@ -12,6 +13,7 @@ const InnerHeader: FC<InnerHeaderProps> = ({
   title,
   titlePosition = 'center',
   showBackIcon = true,
+  swipeDirection = 'left',
   showSearchIcon = true,
   onSearchIconPress,
   showAddIcon = false,
@@ -26,7 +28,11 @@ const InnerHeader: FC<InnerHeaderProps> = ({
   return (
     <View style={[container, overrideContainerStyle]}>
       {showBackIcon ? (
-        <CustomClickableIcon iconName='biArrowLeft' onPress={() => NavigationServices.goBack()} />
+        <CustomClickableIcon
+          iconName={swipeDirection === 'left' ? 'biArrowLeft' : 'downFill'}
+          onPress={() => NavigationServices.goBack()}
+          overrideStyle={{ paddingRight: scale(24) }}
+        />
       ) : titlePosition === 'center' ? (
         <View style={iconStyle} />
       ) : null}
@@ -35,6 +41,7 @@ const InnerHeader: FC<InnerHeaderProps> = ({
           text={title.toLocaleUpperCase()}
           textFontStyle={overrideTitleFontStyle}
           color={theme?.gray2}
+          overrideStyle={showBackIcon ? { left: scale(-24) } : {}}
         />
       )}
       <View style={titlePosition === 'left' ? [rightContainer, { flex: 1 }] : rightContainer}>

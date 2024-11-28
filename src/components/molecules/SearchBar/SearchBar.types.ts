@@ -20,6 +20,10 @@ type SearchBarPropsTypes = {
   onSubmitSearch?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void;
   showCloseButton?: boolean;
   goBackHandler?: () => void;
+  showFilterButton?: boolean;
+  onFilterPress?: () => void;
+  showSortButton?: boolean;
+  onSortPress?: () => void;
   maxLength?: CustomTextInputPropsTypes['maxLength'];
 };
 

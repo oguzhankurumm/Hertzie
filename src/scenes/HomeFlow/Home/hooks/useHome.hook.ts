@@ -77,7 +77,7 @@ const useHome = () => {
 
   const filteredSongs = useMemo(() => {
     if (!songs) return [];
-    if (!searchTerm) return songs;
+    if (!searchTerm) return songs.filter(song => song.type === SongType.Audio);
 
     return songs
       .filter(song => song.type === SongType.Audio)

@@ -1,19 +1,22 @@
 import { StyleSheet } from 'react-native';
 
-import globalStyles from '_styles/globalStyles';
 import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 
-const styles = (theme: ThemeType) =>
+const styles = (_theme: ThemeType) =>
   StyleSheet.create({
     container: {
       flex: 1,
       paddingTop: 0,
-      paddingBottom: verticalScale(60),
+    },
+    innerHeaderStyle: {
+      paddingTop: verticalScale(24),
+      backgroundColor: 'transparent',
+      width: '100%',
     },
     buttonStyle: {
-      paddingHorizontal: scale(16),
-      paddingVertical: verticalScale(14),
+      paddingHorizontal: scale(8),
+      paddingVertical: verticalScale(8),
       justifyContent: 'flex-start',
       alignItems: 'center',
       borderRadius: scale(8),

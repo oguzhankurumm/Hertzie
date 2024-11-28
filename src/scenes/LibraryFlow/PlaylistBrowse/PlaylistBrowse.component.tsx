@@ -2,16 +2,12 @@ import { useMemo } from 'react';
 import { ScrollView, View } from 'react-native';
 
 import iconsObject from '_assets/icons/iconsObject';
-import imagesObject from '_assets/images/imagesObject';
-import { CustomButton, CustomImage, CustomText } from '_atoms';
+import { CustomButton, CustomImage } from '_atoms';
 import { InnerHeader } from '_molecules';
-import NavigationServices from '_navigations/NavigationServices';
-import Scenes from '_navigations/Scenes';
 import { AppWrapper } from '_organisms';
 import globalStyles from '_styles/globalStyles';
 import { scale, verticalScale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
-import { showToast } from '_utils/helpers';
 
 import styles from './PlaylistBrowse.style';
 import { usePlaylistBrowse } from './hooks/usePlaylistBrowse.hook';
@@ -21,7 +17,7 @@ const PlaylistBrowse = () => {
 
   const { categories } = usePlaylistBrowse();
 
-  const { container, buttonStyle } = useMemo(() => styles(theme), [theme]);
+  const { container, innerHeaderStyle, buttonStyle } = useMemo(() => styles(theme), [theme]);
 
   return (
     <AppWrapper overrideStyle={container}>
@@ -31,36 +27,26 @@ const PlaylistBrowse = () => {
         overrideTitleFontStyle='semibold14'
         titlePosition='left'
         showSearchIcon={false}
-        overrideContainerStyle={{
-          paddingTop: verticalScale(24),
-          backgroundColor: 'transparent',
-          width: '100%',
-        }}
+        overrideContainerStyle={innerHeaderStyle}
       />
       <ScrollView
         style={globalStyles(theme)?.flexOne}
-        contentContainerStyle={{ paddingBottom: verticalScale(30) }}
+        contentContainerStyle={{ paddingBottom: verticalScale(96) }}
         showsVerticalScrollIndicator={false}>
         <View
           style={{
-            gap: scale(20),
+            gap: scale(12),
             marginTop: verticalScale(16),
             paddingHorizontal: scale(10),
           }}>
-          {categories.map((category: any) => (
+          {categories.map((category: { title: string; onPress: () => void }) => (
             <CustomButton
-              key={category.id}
+              key={category.title}
               title={category.title}
               overrideStyle={buttonStyle}
-              overrideFontStyle='semibold13'
+              overrideFontStyle='semibold12'
               overrideTitleStyle={{ color: theme?.gray2 }}
-              onPress={() => {
-                showToast({
-                  title: 'In progress',
-                  type: 'info',
-                  description: 'This feature is in progress',
-                });
-              }}
+              onPress={category.onPress}
               leftChild={
                 <CustomImage
                   source={iconsObject?.search}

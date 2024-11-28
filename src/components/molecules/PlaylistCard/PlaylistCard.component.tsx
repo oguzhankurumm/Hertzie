@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 
 import iconsObject from '_assets/icons/iconsObject';
 import imagesObject from '_assets/images/imagesObject';
-import { CustomImage } from '_atoms';
+import { CustomCheckBox, CustomImage } from '_atoms';
 import globalStyles from '_styles/globalStyles';
 import { scale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
@@ -20,6 +20,9 @@ const PlaylistCard: FC<PlaylistCardPropsTypes> = ({
   type = 'list',
   onItemPress,
   showPinIcon = false,
+  selectable = false,
+  selected = false,
+  toggleSelected,
   overrideContainerStyle,
 }) => {
   const theme = useTheme();
@@ -82,6 +85,13 @@ const PlaylistCard: FC<PlaylistCardPropsTypes> = ({
           />
         </View>
       </View>
+      {selectable && (
+        <CustomCheckBox
+          selected={selected}
+          onPress={toggleSelected}
+          overrideContainerStyle={{ flex: 0 }}
+        />
+      )}
     </TouchableOpacity>
   );
 };

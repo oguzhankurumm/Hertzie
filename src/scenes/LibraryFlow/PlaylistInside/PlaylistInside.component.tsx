@@ -7,7 +7,7 @@ import { InnerHeader } from '_molecules';
 import NavigationServices from '_navigations/NavigationServices';
 import Scenes from '_navigations/Scenes';
 import { AppWrapper } from '_organisms';
-import { scale, verticalScale, width } from '_styles/scaling';
+import { scale, verticalScale } from '_styles/scaling';
 import { useTheme } from '_styles/theming';
 
 import styles from './PlaylistInside.style';

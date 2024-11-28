@@ -10,6 +10,7 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast, { BaseToast, ErrorToast, InfoToast } from 'react-native-toast-message';
 
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { PortalProvider } from '@gorhom/portal';
 import {
   DarkTheme,
@@ -95,18 +96,20 @@ const App = () => {
             <GestureHandlerRootView style={globalStyles(theme).flexOne}>
               <StatusBar style={'light' as StatusBarStyle} />
               <SafeAreaProvider>
-                <NavigationContainer
-                  theme={DarkTheme}
-                  ref={navigatorRef => {
-                    navigationRef.current = navigatorRef;
-                    NavigationServices.setTopLevelNavigator(navigatorRef);
-                  }}>
-                  <PaperProvider theme={DefaultTheme}>
-                    <PortalProvider>
-                      <AppNavigator />
-                    </PortalProvider>
-                  </PaperProvider>
-                </NavigationContainer>
+                <BottomSheetModalProvider>
+                  <PortalProvider>
+                    <NavigationContainer
+                      theme={DarkTheme}
+                      ref={navigatorRef => {
+                        navigationRef.current = navigatorRef;
+                        NavigationServices.setTopLevelNavigator(navigatorRef);
+                      }}>
+                      <PaperProvider theme={DefaultTheme}>
+                        <AppNavigator />
+                      </PaperProvider>
+                    </NavigationContainer>
+                  </PortalProvider>
+                </BottomSheetModalProvider>
               </SafeAreaProvider>
             </GestureHandlerRootView>
           </I18nextProvider>

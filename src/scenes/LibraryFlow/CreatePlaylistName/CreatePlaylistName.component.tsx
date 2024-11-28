@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ImageBackground, View } from 'react-native';
 
 import imagesObject from '_assets/images/imagesObject';
-import { CustomButton, CustomImage, CustomText, CustomTextInput } from '_atoms';
+import { CustomButton, CustomText, CustomTextInput } from '_atoms';
 import NavigationServices from '_navigations/NavigationServices';
 import Scenes from '_navigations/Scenes';
 import { AppWrapper } from '_organisms';
@@ -21,9 +21,8 @@ const CreatePlaylistName = () => {
   const {
     container,
     playlistInputContainer,
-    playlistTypeItemCardImageContainer,
-    playlistTypeItemCardImage,
-    playlistTypeItemContainer,
+    playlistNameInputContainerStyle,
+    playlistNameInputStyle,
     buttonsContainer,
     cancelButton,
     createButton,
@@ -40,16 +39,6 @@ const CreatePlaylistName = () => {
           { paddingBottom: verticalScale(72) },
         ]}
         imageStyle={globalStyles(theme)?.flexOne}>
-        <View style={playlistTypeItemContainer}>
-          <View style={playlistTypeItemCardImageContainer}>
-            <CustomImage
-              source={imagesObject?.music}
-              overrideStyle={playlistTypeItemCardImage}
-              overrideResizeMode='contain'
-            />
-          </View>
-          <CustomText text={playlistName} />
-        </View>
         <CustomText
           text='Give your playlist a name'
           textFontStyle='semibold20'
@@ -60,12 +49,8 @@ const CreatePlaylistName = () => {
             inputValue={playlistName}
             handleChange={setPlaylistName}
             placeholder='Enter a playlist name'
-            overrideContainerStyle={{
-              borderWidth: 0,
-              borderBottomWidth: verticalScale(2),
-              borderBottomColor: theme?.white,
-            }}
-            overrideInputStyle={{ width: '100%', borderWidth: 0, textAlign: 'center' }}
+            overrideContainerStyle={playlistNameInputContainerStyle}
+            overrideInputStyle={playlistNameInputStyle}
           />
         </View>
         <View style={buttonsContainer}>

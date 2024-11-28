@@ -13,6 +13,7 @@ import { MediaListProps } from './MediaList.types';
 
 const MediaList: FC<MediaListProps> = ({
   data,
+  customBigTitle,
   type = SongType.Audio,
   showHeader = true,
   showMoreIcon = true,
@@ -23,6 +24,10 @@ const MediaList: FC<MediaListProps> = ({
   onPlayPress,
   onAddPress,
   onItemPress,
+  selectable = false,
+  selected = false,
+  toggleSelected = () => {},
+  scrollEnabled = true,
   overrideContainerStyle,
 }) => {
   const theme = useTheme();
@@ -39,6 +44,7 @@ const MediaList: FC<MediaListProps> = ({
       {showHeader && (
         <PlaylistHeader
           count={data?.length ?? 0}
+          customBigTitle={customBigTitle}
           title={type === SongType.Audio ? 'Songs' : type === SongType.Radio ? 'Radios' : 'Videos'}
           showPlay={showPlayButton}
           showShuffle={showShuffleButton}
@@ -53,6 +59,7 @@ const MediaList: FC<MediaListProps> = ({
         contentContainerStyle={listContentContainerStyle}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
+        scrollEnabled={scrollEnabled}
         ItemSeparatorComponent={ItemSeparatorComponent}
         estimatedItemSize={verticalScale(100)}
         estimatedListSize={{
@@ -67,6 +74,9 @@ const MediaList: FC<MediaListProps> = ({
               onItemPress={() => onItemPress(item)}
               showMoreIcon={showMoreIcon}
               onMorePress={() => {}}
+              selectable={selectable}
+              selected={selected}
+              toggleSelected={toggleSelected}
             />
           );
         }}

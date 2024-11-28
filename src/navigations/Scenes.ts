@@ -5,6 +5,7 @@ const Scenes = {
   register: 'Register',
   home: 'Home',
   player: 'Player',
+  addToPlaylist: 'AddToPlaylist',
   library: 'Library',
   radio: 'Radio',
   settings: 'Settings',
@@ -21,6 +22,7 @@ const Scenes = {
   playlistSelect: 'PlaylistSelect',
   playlistSelectMusic: 'PlaylistSelectMusic',
   browseArtists: 'BrowseArtists',
+  playlist: 'Playlist',
 };
 
 export default Scenes;

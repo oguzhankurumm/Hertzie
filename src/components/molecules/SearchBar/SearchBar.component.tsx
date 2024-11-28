@@ -13,6 +13,8 @@ import styles from './SearchBar.style';
 import { SearchBarPropsTypes } from './SearchBar.types';
 
 const searchIcon = iconsObject?.search;
+const filterIcon = iconsObject?.filter;
+const sortIcon = iconsObject?.sortOutline;
 
 const SearchBar: FC<SearchBarPropsTypes> = ({
   overrideContainerStyle,
@@ -26,14 +28,24 @@ const SearchBar: FC<SearchBarPropsTypes> = ({
   onSubmitSearch = () => {},
   showCloseButton = false,
   goBackHandler = () => {},
+  showFilterButton = false,
+  onFilterPress = () => {},
+  showSortButton = false,
+  onSortPress = () => {},
   maxLength,
 }) => {
   const theme = useTheme();
   const { translate } = useTranslate();
-  const { container, inputContainer, inputStyle, iconStyle, closeButton } = useMemo(
-    () => styles(theme),
-    [theme]
-  );
+  const {
+    container,
+    inputContainer,
+    inputStyle,
+    iconStyle,
+    closeButton,
+    iconButton,
+    iconButtonImage,
+    iconButtonImage20,
+  } = useMemo(() => styles(theme), [theme]);
 
   const placeholderTextColor = useMemo(
     () => overridePlaceholderTextColor ?? theme?.gray[400],
@@ -49,7 +61,7 @@ const SearchBar: FC<SearchBarPropsTypes> = ({
         overridePlaceholderTextColor={placeholderTextColor}
         placeholder={placeholder ?? translate('components.searchBar.placeholder')}
         overrideInputStyle={[inputStyle, overrideInputStyle]}
-        rightChild={
+        leftChild={
           <CustomImage source={searchIcon} overrideResizeMode='contain' overrideStyle={iconStyle} />
         }
         onSubmitEditing={onSubmitSearch}
@@ -58,7 +70,25 @@ const SearchBar: FC<SearchBarPropsTypes> = ({
       />
       {showCloseButton && (
         <TouchableOpacity activeOpacity={0.8} onPress={goBackHandler} style={closeButton}>
-          <IconX size={scale(16)} color={theme?.gray[400]} stroke={scale(1.5)} />
+          <IconX size={scale(16)} color={theme?.gray6} stroke={scale(1.5)} />
+        </TouchableOpacity>
+      )}
+      {showSortButton && (
+        <TouchableOpacity activeOpacity={0.8} onPress={onSortPress} style={iconButton}>
+          <CustomImage
+            source={sortIcon}
+            overrideResizeMode='contain'
+            overrideStyle={iconButtonImage20}
+          />
+        </TouchableOpacity>
+      )}
+      {showFilterButton && (
+        <TouchableOpacity activeOpacity={0.8} onPress={onFilterPress} style={iconButton}>
+          <CustomImage
+            source={filterIcon}
+            overrideResizeMode='contain'
+            overrideStyle={iconButtonImage}
+          />
         </TouchableOpacity>
       )}
     </View>

@@ -7,6 +7,7 @@ type InnerHeaderProps = MainTypes & {
   title?: string;
   titlePosition?: 'center' | 'left';
   showBackIcon?: boolean;
+  swipeDirection?: 'left' | 'bottom';
   showSearchIcon?: boolean;
   onSearchIconPress?: () => void;
   showAddIcon?: boolean;

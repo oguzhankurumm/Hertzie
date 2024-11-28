@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-import globalStyles from '_styles/globalStyles';
 import { scale, verticalScale } from '_styles/scaling';
 import { ThemeType } from '_types/theme';
 

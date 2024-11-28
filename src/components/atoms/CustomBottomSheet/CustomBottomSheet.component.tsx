@@ -36,7 +36,12 @@ const CustomBottomSheet: FC<CustomBottomSheetPropsTypes> = ({
 
   const renderBackdrop = useCallback(
     (props_: BottomSheetBackdropProps) => (
-      <BottomSheetBackdrop {...props_} pressBehavior='close' opacity={0.3} disappearsOnIndex={-1} />
+      <BottomSheetBackdrop
+        {...props_}
+        pressBehavior='close'
+        opacity={0.81}
+        disappearsOnIndex={-1}
+      />
     ),
     []
   );

@@ -20,7 +20,7 @@ const styles = (theme: ThemeType) =>
     inputStyle: {
       ...TextStyle?.regular15,
       backgroundColor: 'transparent',
-      color: theme?.white,
+      color: theme?.gray2,
       flex: 1,
       textAlign: 'auto',
     },
