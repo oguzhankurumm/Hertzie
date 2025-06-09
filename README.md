@@ -18,16 +18,16 @@
 
 ## 🌟 Project Overview
 
-**Hertzie**, geliştirilmiş ses deneyimi ve kişiselleştirilmiş müzik akışı sunan modern bir mobil uygulamadır. React Native ve Expo kullanılarak geliştirilen bu uygulama, iOS ve Android platformlarında çalışarak kullanıcılara profesyonel müzik deneyimi sunmaktadır.
+**Hertzie** is a modern mobile application that provides enhanced audio experience and personalized music streaming. Developed using React Native and Expo, this application runs on both iOS and Android platforms, offering users a professional music experience.
 
 ### 🎯 Main Highlights
 
-- 🎚️ **Unique Hertz Enhancement**: Ses frekansı optimizasyonu ile gelişmiş audio deneyimi
-- 🎵 **Professional Music Player**: Tam özellikli müzik çalar (shuffle, repeat, queue management)
-- 📻 **Live Radio Streaming**: Canlı radyo yayını özelliği
-- 🎨 **Dynamic Theming**: Koyu/açık tema desteği ile kişiselleştirilebilir arayüz
-- 🌐 **Multi-language Support**: Türkçe ve İngilizce dil desteği
-- 📱 **Cross-platform**: iOS ve Android desteği
+- 🎚️ **Unique Hertz Enhancement**: Advanced audio experience with sound frequency optimization
+- 🎵 **Professional Music Player**: Full-featured music player with shuffle, repeat, and queue management
+- 📻 **Live Radio Streaming**: Live radio broadcasting feature
+- 🎨 **Dynamic Theming**: Customizable interface with dark/light theme support
+- 🌐 **Multi-language Support**: Turkish and English language support
+- 📱 **Cross-platform**: iOS and Android support
 
 ---
 
@@ -76,37 +76,37 @@
 ## 🚀 Installation
 
 ### Prerequisites
-- Node.js 14 veya üzeri
+- Node.js 14 or newer
 - Yarn package manager
 - Expo CLI
-- iOS Simulator (Mac) veya Android Emulator
+- iOS Simulator (Mac) or Android Emulator
 
 ### Quick Start
 
 ```bash
-# Repository'yi klonlayın
+# Clone the repository
 git clone https://github.com/yourusername/hertzie.git
 
-# Proje dizinine gidin
+# Navigate to project directory
 cd hertzie
 
-# Bağımlılıkları yükleyin
+# Install dependencies
 yarn install
 
-# Development server'ı başlatın
+# Start development server
 yarn start
 
-# iOS'ta çalıştırın
+# Run on iOS
 yarn ios-dev
 
-# Android'de çalıştırın
+# Run on Android
 yarn android-dev
 ```
 
 ### Environment Setup
 
 ```bash
-# API ortam değişkenlerini ayarlayın
+# Set API environment variables
 API_ENV=dev  # dev, stg, prod
 ```
 
@@ -224,51 +224,42 @@ EXPO_PROJECT_ID=your-project-id
 
 ## 🤝 Contributing
 
-Bu proje portfolyo amacıyla oluşturulmuş olsa da, katkılarınızı memnuniyetle karşılıyorum!
+While this project was created for portfolio purposes, contributions are welcome!
 
-1. Fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ### Development Guidelines
 
-- ✅ TypeScript kullanın
-- ✅ ESLint kurallarına uyun
-- ✅ Atomic Design prensiplerini takip edin
-- ✅ Test yazın
-- ✅ Meaningful commit mesajları
+- ✅ Use TypeScript
+- ✅ Follow ESLint rules
+- ✅ Follow Atomic Design principles
+- ✅ Write tests
+- ✅ Use meaningful commit messages
 
 ---
 
 ## 📄 License
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👨‍💻 Developer
 
 **Oğuzhan Kurum**
-- 🌐 Portfolio: [your-portfolio.com](https://your-portfolio.com)
+- 🌐 Portfolio: [oguzhankurum.com](https://oguzhankurum.com)
 - 💼 LinkedIn: [linkedin.com/in/oguzhankurum](https://linkedin.com/in/oguzhankurum)
-- 📧 Email: oguzhan@example.com
-- 🐦 Twitter: [@oguzhankurum](https://twitter.com/oguzhankurum)
-
----
-
-## 🙏 Acknowledgments
-
-- **React Native Community** - Harika framework için
-- **Expo Team** - Geliştirme araçları için
-- **Open Source Contributors** - Kullanılan kütüphaneler için
+- 📧 Email: hello@oguzhankurum.com
 
 ---
 
 <div align="center">
 
-**⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!**
+**⭐ If you like this project, don't forget to give it a star!**
 
 Made with ❤️ in Türkiye
 
