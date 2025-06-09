@@ -136,3 +136,12 @@ src/assets/icons/.DS_Store
 
 
 NOTES.txt
+
+# VS Code settings
+.vscode/
+
+# Expo
+.expo/
+
+# BFG Repo-cleaner reports
+.git.bfg-report/
