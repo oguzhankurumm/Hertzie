@@ -1,142 +1,275 @@
-# Hertzie Mobile App
+# 🎵 Hertzie - Premium Music Streaming Experience
 
-This is a React Native Hertzie Mobile App.
+<div align="center">
 
-- **Zustand Global State Management**
-  - [zustand](https://github.com/pmndrs/zustand)
-- **Navigation**
-  - [React Navigation](https://reactnavigation.org/docs/getting-started)
-- **Localization**
-  - [Expo Localization](https://docs.expo.dev/versions/latest/sdk/localization/)
-- **Multi Language Support**
-  - [i18next](https://github.com/i18next/i18next)
-  - [react-i18next](https://github.com/i18next/react-i18next)
-- **Multi Theme Support**
-  - [React Theme Provider](https://github.com/callstack/react-theme-provider#readme)
-- **Local Storage**
-  - [Async Storage](@react-native-async-storage/async-storage)
-- **Data fetching, caching, synchronising, and updating the server state**
-  - [TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
-- **Encrypt and securely store key–value pairs locally on the device**
-  - [expo-unlimited-secure-store](https://github.com/dannyklaassen/expo-unlimited-secure-store)
-- **Unit Testing**
-  - [jest](https://github.com/jestjs/jest)
-  - [react-test-renderer](https://legacy.reactjs.org/docs/test-renderer.html)
-  - [@testing-library/react-native](https://github.com/callstack/react-native-testing-library)
-- **Logger Tool**
-  - [react-native-logs](https://github.com/onubo/react-native-logs)
+**Modern Music Streaming & Audio Enhancement Platform**
 
-## Components Directory
+[![React Native](https://img.shields.io/badge/React%20Native-0.74.5-blue.svg)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-~51.0.39-black.svg)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-~5.3.3-blue.svg)](https://www.typescriptlang.org/)
+[![Zustand](https://img.shields.io/badge/Zustand-^4.5.4-orange.svg)](https://github.com/pmndrs/zustand)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This directory holds a reference to all the re-usable components and their type (Atom, Molecule & Organism)
+[✨ Features](#-features) • [🚀 Installation](#-installation) • [🏗️ Architecture](#️-architecture) • [🚦 Development](#-development)
 
-### Hooks
+</div>
 
-This directory holds a reference to all the re-usable hooks
+---
 
-- [useAssets](./__docs__/hooks/useAssets.md)
-- [useTranslate](./__docs__/hooks/useTranslate.md)
-- [useExpoNotification](./__docs__/hooks/useExpoNotification.md)
-- [useExpoNotificationPermissions](./__docs__/hooks/useExpoNotificationPermissions.md)
-- [useNetworkInfo](./__docs__/hooks/useNetworkInfo.md)
-- [usePreviousState](./__docs__/hooks/usePreviousState.md)
+## 🌟 Project Overview
 
-### Utils
+**Hertzie**, geliştirilmiş ses deneyimi ve kişiselleştirilmiş müzik akışı sunan modern bir mobil uygulamadır. React Native ve Expo kullanılarak geliştirilen bu uygulama, iOS ve Android platformlarında çalışarak kullanıcılara profesyonel müzik deneyimi sunmaktadır.
 
-This directory holds a reference to all the re-usable utils, helpers & constants
+### 🎯 Main Highlights
 
-- helpers
-- [secureStorageHandler](./__docs__/utils/secureStorageHandler.md)
-- [storageHandler](./__docs__/utils/storageHandler.md)
+- 🎚️ **Unique Hertz Enhancement**: Ses frekansı optimizasyonu ile gelişmiş audio deneyimi
+- 🎵 **Professional Music Player**: Tam özellikli müzik çalar (shuffle, repeat, queue management)
+- 📻 **Live Radio Streaming**: Canlı radyo yayını özelliği
+- 🎨 **Dynamic Theming**: Koyu/açık tema desteği ile kişiselleştirilebilir arayüz
+- 🌐 **Multi-language Support**: Türkçe ve İngilizce dil desteği
+- 📱 **Cross-platform**: iOS ve Android desteği
 
-## Requirements
+---
 
-Node 14 or newer is required. Development for iOS requires a Mac and Xcode, and will target iOS 12.4 and up.
+## ✨ Features
 
-You also need to install the dependencies required by React Native.  
-Go to the [React Native environment setup](https://reactnative.dev/docs/environment-setup), then select `Expo Go Quickstart` tab.  
-Follow the instructions.
-
-## Quick start
-
-To create a new project using the seed simply the following steps:
-
-- Clone the project
-
-```
-git clone https://github.com/oguzhankurumm/hertzie.git
+### 🎵 Music Streaming
+```typescript
+// Advanced Audio Features
+✅ Professional Track Player Integration
+✅ Background Audio Playback
+✅ Real-time Progress Control
+✅ Queue Management
+✅ Shuffle & Repeat Modes
 ```
 
-- Enter the project folder
-
+### 🎚️ Audio Enhancement
+```typescript
+// Unique Hertz Processing
+✅ Custom Frequency Optimization
+✅ Advanced Equalizer Settings
+✅ Audio Cache Management
+✅ Quality Enhancement
 ```
-cd Hertzie
+
+### 📱 User Experience
+```typescript
+// Modern Mobile Experience
+✅ Gesture-based Navigation
+✅ Bottom Sheet Modals
+✅ Smooth Animations
+✅ Responsive Design
+✅ Dark/Light Theme
 ```
 
-- Install the dependencies
-
+### 🎼 Playlist Management
+```typescript
+// Complete Playlist System
+✅ Create & Organize Playlists
+✅ Add Songs to Collections
+✅ Browse Music Library
+✅ Search & Filter
 ```
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+- Node.js 14 veya üzeri
+- Yarn package manager
+- Expo CLI
+- iOS Simulator (Mac) veya Android Emulator
+
+### Quick Start
+
+```bash
+# Repository'yi klonlayın
+git clone https://github.com/yourusername/hertzie.git
+
+# Proje dizinine gidin
+cd hertzie
+
+# Bağımlılıkları yükleyin
 yarn install
+
+# Development server'ı başlatın
+yarn start
+
+# iOS'ta çalıştırın
+yarn ios-dev
+
+# Android'de çalıştırın
+yarn android-dev
 ```
 
-- Run app
+### Environment Setup
 
-```
-yarn run start
-```
-
-- Update remote git repository
-
-```
-rm -rf .git
-git init
-git add --all
-git commit -m "Initial Commit"
-git remote add origin <new repo>
-git push -u origin HEAD:main
+```bash
+# API ortam değişkenlerini ayarlayın
+API_ENV=dev  # dev, stg, prod
 ```
 
-## Debugging
+---
 
-In order to check the logs and inspect the app, download one of the below tools:
+## 🏗️ Architecture
 
-- [Reactotron](https://github.com/infinitered/reactotron)
+### 📁 Project Structure
+```
+src/
+├── 🎨 assets/           # Images, icons, fonts, animations
+├── 🧩 components/       # Reusable UI components
+│   ├── atoms/          # Basic components (Button, Text, etc.)
+│   ├── molecules/      # Component combinations
+│   └── organisms/      # Complex components
+├── 🪝 hooks/           # Custom React hooks
+├── 🌐 locales/         # Internationalization
+├── 🎭 modals/          # Modal components
+├── 🧭 navigations/     # Navigation configuration
+├── 🌐 network/         # API integration
+├── 📄 scenes/          # Screen components
+├── 🏪 stores/          # Zustand state management
+├── 🎨 styles/          # Global styles & theming
+└── 🛠️ utils/           # Helper functions
+```
 
-## Useful commands
+### 🛠️ Tech Stack
 
-- Run android in dev env
-  ```
-  yarn run android-dev
-  ```
-- Run android in staging env
-  ```
-  yarn run android-stg
-  ```
-- Run android in production env
-  ```
-  yarn run android-prod
-  ```
-- Run iOS in dev env
-  ```
-  yarn run ios-dev
-  ```
-- Run iOS in staging env
-  ```
-  yarn run ios-stg
-  ```
-- Run iOS in production env
-  ```
-  yarn run ios-prod
-  ```
-- Start Unit Testing
-  ```
-  yarn run test
-  ```
-- Fix Lint Errors only
-  ```
-  yarn run lint-errors
-  ```
-- Fix Lint Errors & Warnings
-  ```
-  yarn run lint
-  ```
+#### **Frontend Framework**
+- **React Native** - Cross-platform mobile development
+- **Expo** - Development platform and tools
+- **TypeScript** - Type-safe JavaScript
+
+#### **State Management**
+- **Zustand** - Lightweight state management
+- **TanStack Query** - Server state management
+- **React Hook Form** - Form state management
+
+#### **UI & Styling**
+- **NativeWind** - Tailwind CSS for React Native
+- **React Theme Provider** - Dynamic theming
+- **Atomic Design** - Component architecture
+
+#### **Audio & Media**
+- **React Native Track Player** - Professional audio playback
+- **Custom Audio Processing** - Hertz enhancement
+- **Background Audio** - Continuous playback
+
+#### **Navigation & UX**
+- **React Navigation 6** - Navigation system
+- **Gorhom Bottom Sheet** - Modern bottom sheets
+- **React Native Gesture Handler** - Smooth gestures
+
+---
+
+## 🎨 Design System
+
+### Color Palette
+```typescript
+// Theme Configuration
+const lightTheme = {
+  primary: '#6366F1',
+  secondary: '#8B5CF6',
+  accent: '#06B6D4',
+  success: '#10B981',
+  warning: '#F59E0B',
+  danger: '#EF4444',
+};
+```
+
+### Typography Scale
+```typescript
+// Responsive Typography
+export const TextStyle = {
+  heading1: { fontSize: moderateScale(32), fontWeight: 'bold' },
+  heading2: { fontSize: moderateScale(24), fontWeight: 'bold' },
+  body: { fontSize: moderateScale(16), fontWeight: 'normal' },
+  caption: { fontSize: moderateScale(12), fontWeight: 'normal' },
+};
+```
+
+---
+
+## 🚦 Development
+
+### Available Scripts
+
+```bash
+# Development
+yarn start                 # Start Expo development server
+yarn android-dev          # Run on Android (dev environment)
+yarn ios-dev             # Run on iOS (dev environment)
+
+# Testing & Quality
+yarn test                 # Run unit tests
+yarn lint                # Fix linting issues
+yarn type:check          # TypeScript type checking
+
+# Production
+yarn android-prod        # Build for Android production
+yarn ios-prod           # Build for iOS production
+```
+
+### Environment Variables
+
+```bash
+# API Configuration
+API_ENV=dev              # dev, stg, prod
+
+# Expo Configuration
+EXPO_PROJECT_ID=your-project-id
+```
+
+---
+
+## 🤝 Contributing
+
+Bu proje portfolyo amacıyla oluşturulmuş olsa da, katkılarınızı memnuniyetle karşılıyorum!
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+### Development Guidelines
+
+- ✅ TypeScript kullanın
+- ✅ ESLint kurallarına uyun
+- ✅ Atomic Design prensiplerini takip edin
+- ✅ Test yazın
+- ✅ Meaningful commit mesajları
+
+---
+
+## 📄 License
+
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
+
+---
+
+## 👨‍💻 Developer
+
+**Oğuzhan Kurum**
+- 🌐 Portfolio: [your-portfolio.com](https://your-portfolio.com)
+- 💼 LinkedIn: [linkedin.com/in/oguzhankurum](https://linkedin.com/in/oguzhankurum)
+- 📧 Email: oguzhan@example.com
+- 🐦 Twitter: [@oguzhankurum](https://twitter.com/oguzhankurum)
+
+---
+
+## 🙏 Acknowledgments
+
+- **React Native Community** - Harika framework için
+- **Expo Team** - Geliştirme araçları için
+- **Open Source Contributors** - Kullanılan kütüphaneler için
+
+---
+
+<div align="center">
+
+**⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!**
+
+Made with ❤️ in Türkiye
+
+</div>
